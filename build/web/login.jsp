@@ -10,27 +10,43 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <style>
+            .bg-1 { 
+                background-color: #f4511e; /* Green */
+                color: #ffffff;
+            }
+            .bg-2 { 
+                background-color: #474e5d; /* Dark Blue */
+                color: #ffffff;
+            }
+            .bg-3 { 
+                background-color: #ffffff; /* White */
+                color: #555555;
+            }
+        </style>
     <body>
-        <fieldset>
-            <legend>
-                Login
-                (<font color = "red">*</font> = required)
-            </legend>
-            <form action = "login" method = "post">
-                <label>
-                    <font color = "red">*</font>Username: 
-                    <input type = "text" name = "username"/>
-                </label>
-                <br>
-                <label>
-                    <font color = "red">*</font>Password: 
-                    <input type = "password" name = "password"/>
-                </label>
-                <br>
-                <input type = "submit" value = "Login"/>
-                <br>
-                Don't have an account? Create one <a href = "createAccount.jsp">here!</a>
-            </form>
-        </fieldset>
+        <div class="container-fluid bg-1 text-center">
+            <fieldset>
+                <legend>
+                    Login
+                    (<font color = "red">*</font> = required)
+                </legend>
+                <form action = "login" method = "post">
+                    <label>
+                        <font color = "red">*</font>Username: 
+                        <input type = "text" name = "username"/>
+                    </label>
+                    <br>
+                    <label>
+                        <font color = "red">*</font>Password: 
+                        <input type = "password" name = "password"/>
+                    </label>
+                    <br>
+                    <input type = "submit" value = "Login"/>
+                    <br>
+                    Don't have an account? Create one <a href = "createAccount.jsp">here!</a>
+                </form>
+            </fieldset>
+        </div>
     </body>
 </html>
