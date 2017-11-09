@@ -1,0 +1,16 @@
+body { 
+                background-color: #4F94CD;
+                text-align: center;
+            }
+            .bg-1 { 
+                background-color: #4F94CD; 
+                color: #ffffff;
+            }
+            .bg-2 { 
+                background-color: #474e5d; 
+                color: #ffffff;
+            }
+            .bg-3 { 
+                background-color: #ffffff;
+                color: #555555;
+            }
