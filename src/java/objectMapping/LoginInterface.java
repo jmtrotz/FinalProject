@@ -1,7 +1,7 @@
 package objectMapping;
 
-public interface LoginInterface 
-{
+public interface LoginInterface {
+
     /**
      * @param username - The student's username
      * @param password - The student's password

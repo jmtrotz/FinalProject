@@ -12,14 +12,13 @@ import objectMapping.CreateAccountImplementation;
 import org.springframework.context.ApplicationContext;
 import org.springframework.web.context.support.WebApplicationContextUtils;
 
-public class CreateAccountServlet extends HttpServlet 
-{
+public class CreateAccountServlet extends HttpServlet {
+
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
-    {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         ApplicationContext context = WebApplicationContextUtils.getRequiredWebApplicationContext((getServletContext()));
         CreateAccountImplementation createAccount = (CreateAccountImplementation) context.getBean("createAccont");
-        
+
         String address = "";
         String studentID = request.getParameter("studentID");
         String firstName = request.getParameter("firstName");
@@ -46,20 +45,11 @@ public class CreateAccountServlet extends HttpServlet
 
         if (studentID.length() == 0 || firstName.length() == 0 || lastName.length() == 0 || username.length() == 0 || password.length() == 0 || email.length() == 0) {
             address = "createAccountError-emptyFields.jsp";
-        } 
-        
-        else if (!createAccount.verifyPassword(password, confirmPassword)) 
-        {
+        } else if (!createAccount.verifyPassword(password, confirmPassword)) {
             address = "createAccountError-passwordMismatch.jsp";
-        } 
-        
-        else if (!createAccount.verifyUsername(username)) 
-        {
+        } else if (!createAccount.verifyUsername(username)) {
             address = "createAccountError-usernameTaken.jsp";
-        }
-        
-        else 
-        {
+        } else {
             createAccount.createAccount(studentID, firstName, lastName, username, password, email, classes);
             address = "accountCreated.jsp";
         }
