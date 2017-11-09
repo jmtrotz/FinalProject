@@ -13,14 +13,13 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     </head>
     <body>
+        <div class="container-fluid bg-1 text-center">
         <fieldset>
             <legend>
                 Login
                 (<font color = "red">*</font> = required)
             </legend>
-            <h1>
-                Login error: please fill out all required fields
-            </h1>
+            <img src="images/error.png"><h1>Login error: please fill out all required fields</h1><img src="images/error.jpg">
             <form action = "login" method = "post">
                 <label>
                     <font color = "red">*</font>Username: 
@@ -37,5 +36,6 @@
                 Don't have an account? Create one <a href = "createAccount.jsp">here!</a>
             </form>
         </fieldset>
+        </div>
     </body>
 </html>
