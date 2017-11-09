@@ -4,7 +4,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
 
-public final class class_jsp extends org.apache.jasper.runtime.HttpJspBase
+public final class accountCreated_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
 
   private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
@@ -46,22 +46,39 @@ public final class class_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("<html>\n");
       out.write("    <head>\n");
       out.write("        <meta http-equiv = \"Content-Type\" content = \"text/html; charset=UTF-8\">\n");
-      out.write("        <title>Easel</title>\n");
+      out.write("        <title>\n");
+      out.write("            Easel\n");
+      out.write("        </title>\n");
       out.write("        <link rel = \"shortcut icon\" href = \"images/logo.png\"/>\n");
       out.write("        <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\">\n");
       out.write("        <link rel=\"stylesheet\" href=\"styles.css\">\n");
       out.write("        <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js\"></script>\n");
       out.write("        <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js\"></script>\n");
-      out.write("    </head>\n");
       out.write("    <body>\n");
-      out.write("        <div class=\"col-xs-4\">\n");
-      out.write("            <h3>Grades</h3>\n");
-      out.write("            <h3>Assignments</h3>\n");
-      out.write("            <h3>Documents</h3>\n");
-      out.write("            <h3>People</h3>\n");
-      out.write("        </div>\n");
-      out.write("        <div class=\"col-xs-8\">\n");
-      out.write("            <h1>Welcome to the class</h1>\n");
+      out.write("        <div class=\"container-fluid bg-1 text-center\">\n");
+      out.write("            <fieldset>\n");
+      out.write("                <legend>\n");
+      out.write("                    Login\n");
+      out.write("                    (<font color = \"red\">*</font> = required)\n");
+      out.write("                </legend>\n");
+      out.write("                <h1>\n");
+      out.write("                    Your account has been created! Please try logging in\n");
+      out.write("                </h1>\n");
+      out.write("                <form action = \"login\" method = \"post\">\n");
+      out.write("                    <label>\n");
+      out.write("                        <font color = \"red\">*</font>Username: \n");
+      out.write("                        <input type = \"text\" name = \"username\"/>\n");
+      out.write("                    </label>\n");
+      out.write("                    <br>\n");
+      out.write("                    <label>\n");
+      out.write("                        <font color = \"red\">*</font>Password: \n");
+      out.write("                        <input type = \"password\" name = \"password\"/>\n");
+      out.write("                    </label>\n");
+      out.write("                    <br>\n");
+      out.write("                    <input type = \"submit\" value = \"Login\"/>\n");
+      out.write("                    <br>\n");
+      out.write("                </form>\n");
+      out.write("            </fieldset>\n");
       out.write("        </div>\n");
       out.write("    </body>\n");
       out.write("</html>");

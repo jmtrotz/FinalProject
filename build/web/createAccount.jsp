@@ -28,6 +28,7 @@
                     <font color = "red">*</font>First Name: 
                     <input type = "text" name = "firstName"/>
                 </label>
+                <br>
                 <label>
                     <font color = "red">*</font>Last Name: 
                     <input type = "text" name = "lastName"/>

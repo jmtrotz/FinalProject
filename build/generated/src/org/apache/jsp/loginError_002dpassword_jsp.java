@@ -4,7 +4,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
 
-public final class loginError_002demptyFields_jsp extends org.apache.jasper.runtime.HttpJspBase
+public final class loginError_002dpassword_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
 
   private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
@@ -56,14 +56,13 @@ public final class loginError_002demptyFields_jsp extends org.apache.jasper.runt
       out.write("        <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js\"></script>\r\n");
       out.write("    </head>\r\n");
       out.write("    <body>\r\n");
-      out.write("        <div class=\"container-fluid bg-1 text-center\">\r\n");
       out.write("        <fieldset>\r\n");
       out.write("            <legend>\r\n");
       out.write("                Login\r\n");
       out.write("                (<font color = \"red\">*</font> = required)\r\n");
       out.write("            </legend>\r\n");
       out.write("            <img src=\"images/error.png\">\r\n");
-      out.write("            <h1 class=\"error\">Login error: Please fill out all required fields</h1>\r\n");
+      out.write("            <h1>Login error: invalid password</h1>\r\n");
       out.write("            <form action = \"login\" method = \"post\">\r\n");
       out.write("                <label>\r\n");
       out.write("                    <font color = \"red\">*</font>Username: \r\n");
@@ -80,7 +79,6 @@ public final class loginError_002demptyFields_jsp extends org.apache.jasper.runt
       out.write("                Don't have an account? Create one <a href = \"createAccount.jsp\">here!</a>\r\n");
       out.write("            </form>\r\n");
       out.write("        </fieldset>\r\n");
-      out.write("        </div>\r\n");
       out.write("    </body>\r\n");
       out.write("</html>");
     } catch (Throwable t) {

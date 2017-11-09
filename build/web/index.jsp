@@ -6,8 +6,6 @@
         <title>
             Easel
         </title>
-        <link rel = "shortcut icon" href = "images/logo.png"/>
-        <link rel = "stylesheet" href = "css/styleSheet.css"/>
     </head>
     <body>
         <% response.sendRedirect("login.jsp"); %>

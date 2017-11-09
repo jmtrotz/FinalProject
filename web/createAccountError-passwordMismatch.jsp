@@ -18,9 +18,8 @@
                 Create Account
                 (<font color = "red">*</font> = required)
             </legend>
-            <h1>
-                Error creating account: passwords don't match
-            </h1>
+            <img src="images/error.png">
+            <h1>Error creating account: Passwords don't match</h1>
             <form action = "createAccount" method = "post">
                 <label>
                     <font color = "red">*</font>Student ID: 
@@ -31,6 +30,7 @@
                     <font color = "red">*</font>First Name: 
                     <input type = "text" name = "firstName"/>
                 </label>
+                <br>
                 <label>
                     <font color = "red">*</font>Last Name: 
                     <input type = "text" name = "lastName"/>

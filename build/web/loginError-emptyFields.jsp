@@ -19,7 +19,8 @@
                 Login
                 (<font color = "red">*</font> = required)
             </legend>
-            <img src="images/error.png"><h1>Login error: please fill out all required fields</h1><img src="images/error.jpg">
+            <img src="images/error.png">
+            <h1>Login error: Please fill out all required fields</h1>
             <form action = "login" method = "post">
                 <label>
                     <font color = "red">*</font>Username: 

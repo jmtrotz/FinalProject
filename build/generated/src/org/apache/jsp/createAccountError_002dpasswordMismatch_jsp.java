@@ -4,7 +4,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
 
-public final class createAccountError_002demptyFields_jsp extends org.apache.jasper.runtime.HttpJspBase
+public final class createAccountError_002dpasswordMismatch_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
 
   private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
@@ -62,7 +62,7 @@ public final class createAccountError_002demptyFields_jsp extends org.apache.jas
       out.write("                (<font color = \"red\">*</font> = required)\r\n");
       out.write("            </legend>\r\n");
       out.write("            <img src=\"images/error.png\">\r\n");
-      out.write("            <h1>Error creating account: please fill out all required fields</h1>\r\n");
+      out.write("            <h1>Error creating account: passwords don't match</h1>\r\n");
       out.write("            <form action = \"createAccount\" method = \"post\">\r\n");
       out.write("                <label>\r\n");
       out.write("                    <font color = \"red\">*</font>Student ID: \r\n");
@@ -73,6 +73,7 @@ public final class createAccountError_002demptyFields_jsp extends org.apache.jas
       out.write("                    <font color = \"red\">*</font>First Name: \r\n");
       out.write("                    <input type = \"text\" name = \"firstName\"/>\r\n");
       out.write("                </label>\r\n");
+      out.write("                <br>\r\n");
       out.write("                <label>\r\n");
       out.write("                    <font color = \"red\">*</font>Last Name: \r\n");
       out.write("                    <input type = \"text\" name = \"lastName\"/>\r\n");

@@ -18,9 +18,8 @@
                 Login
                 (<font color = "red">*</font> = required)
             </legend>
-            <h1>
-                Login error: invalid username
-            </h1>
+            <img src="images/error.png">
+            <h1>Login error: Invalid username</h1>
             <form action = "login" method = "post">
                 <label>
                     <font color = "red">*</font>Username: 

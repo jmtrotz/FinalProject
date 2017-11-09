@@ -49,8 +49,6 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        <title>\n");
       out.write("            Easel\n");
       out.write("        </title>\n");
-      out.write("        <link rel = \"shortcut icon\" href = \"images/logo.png\"/>\n");
-      out.write("        <link rel = \"stylesheet\" href = \"css/styleSheet.css\"/>\n");
       out.write("    </head>\n");
       out.write("    <body>\n");
       out.write("        ");
