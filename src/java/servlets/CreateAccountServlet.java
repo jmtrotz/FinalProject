@@ -8,18 +8,18 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import org.hibernate.HibernateException;
-import org.hibernate.Session;
-import org.hibernate.Transaction;
-import org.hibernate.SessionFactory;
-import org.hibernate.cfg.Configuration;
-import objectMapping.Student;
+import objectMapping.CreateAccountImplementation;
+import org.springframework.context.ApplicationContext;
+import org.springframework.web.context.support.WebApplicationContextUtils;
 
 public class CreateAccountServlet extends HttpServlet 
 {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
     {
+        ApplicationContext context = WebApplicationContextUtils.getRequiredWebApplicationContext((getServletContext()));
+        CreateAccountImplementation createAccount = (CreateAccountImplementation) context.getBean("createAccont");
+        
         String address = "";
         String studentID = request.getParameter("studentID");
         String firstName = request.getParameter("firstName");
@@ -44,73 +44,27 @@ public class CreateAccountServlet extends HttpServlet
         classes.add(class6);
         classes.add(class7);
 
-        if (studentID.length() == 0 || firstName.length() == 0 || lastName.length() == 0
-                || username.length() == 0 || password.length() == 0 || email.length() == 0) 
-        {
+        if (studentID.length() == 0 || firstName.length() == 0 || lastName.length() == 0 || username.length() == 0 || password.length() == 0 || email.length() == 0) {
             address = "createAccountError-emptyFields.jsp";
         } 
         
-        else if (!password.equals(confirmPassword)) 
+        else if (!createAccount.verifyPassword(password, confirmPassword)) 
         {
             address = "createAccountError-passwordMismatch.jsp";
         } 
         
-        else if (this.verifyUser(username)) 
+        else if (!createAccount.verifyUsername(username)) 
         {
             address = "createAccountError-usernameTaken.jsp";
-        } 
+        }
         
         else 
         {
-            this.createAccount(studentID, firstName, lastName, username, password, email, 
-                    classes);
-            address = "login.jsp";
+            createAccount.createAccount(studentID, firstName, lastName, username, password, email, classes);
+            address = "accountCreated.jsp";
         }
-        
+
         RequestDispatcher dispatcher = request.getRequestDispatcher(address);
         dispatcher.forward(request, response);
-    }
-    
-    private boolean verifyUser(String username)
-    {
-        if (false)
-        {
-            return false;
-        }
-        
-        else
-        {
-            return true;
-        }
-    }
-    
-    private void createAccount(String studentID, String firstName, String lastName, 
-            String username, String password, String email, Set classes)
-    {
-        SessionFactory factory = new Configuration().configure().buildSessionFactory();
-        Session session = factory.openSession();
-        Transaction tx = null;
-
-        try 
-        {
-            tx = session.beginTransaction();
-            Student student = new Student(studentID, firstName, lastName, username, 
-                    password, email, classes);
-            session.save(student);
-            tx.commit();
-        } 
-        
-        catch (HibernateException e) 
-        {
-            if (tx != null) 
-            {
-                tx.rollback();
-            }
-        } 
-        
-        finally 
-        {
-            session.close();
-        }
     }
 }
