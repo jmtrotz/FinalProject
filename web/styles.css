@@ -14,3 +14,13 @@ body {
     background-color: #ffffff;
     color: #555555;
 }
+
+form {
+    border: 3px solid #000000;
+    border-radius: 25px;
+    border-color: #ffffff;
+    margin: 12px;
+    padding: .3em 1em;
+    width: 250px;
+    text-align: center;
+}

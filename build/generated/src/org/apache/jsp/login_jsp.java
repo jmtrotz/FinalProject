@@ -53,8 +53,7 @@ public final class login_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\">\r\n");
       out.write("        <link rel=\"stylesheet\" href=\"styles.css\">\r\n");
       out.write("        <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js\"></script>\r\n");
-      out.write("        <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js\"></script>\r\n");
-      out.write(" \r\n");
+      out.write("        <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js\"></script> \r\n");
       out.write("    <body>\r\n");
       out.write("        <div class=\"container-fluid bg-1 text-center\">\r\n");
       out.write("            <fieldset>\r\n");

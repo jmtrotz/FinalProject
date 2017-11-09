@@ -61,7 +61,7 @@ public final class class_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("            <h3>People</h3>\n");
       out.write("        </div>\n");
       out.write("        <div class=\"col-xs-8\">\n");
-      out.write("            <h1>Welcome to the class</h1>\n");
+      out.write("            <h1>Welcome to the class!</h1>\n");
       out.write("        </div>\n");
       out.write("    </body>\n");
       out.write("</html>");

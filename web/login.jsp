@@ -32,7 +32,7 @@
                     <input type = "submit" value = "Login"/>
                     <br>
                     Don't have an account? Create one <a href = "createAccount.jsp">here!</a>
-                </form>
+                </form> 
             </fieldset>
         </div>
     </body>

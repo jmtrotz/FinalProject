@@ -11,13 +11,13 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     </head>
     <body>
-        <div class="col-xs-4">
+        <div class="col-xs-2 bg-2">
             <h3>Grades</h3>
             <h3>Assignments</h3>
             <h3>Documents</h3>
             <h3>People</h3>
         </div>
-        <div class="col-xs-8">
+        <div class="col-xs-10 bg-1">
             <h1>Welcome to the class!</h1>
         </div>
     </body>

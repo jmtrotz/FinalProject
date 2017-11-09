@@ -63,7 +63,7 @@ public final class loginError_002demptyFields_jsp extends org.apache.jasper.runt
       out.write("                (<font color = \"red\">*</font> = required)\r\n");
       out.write("            </legend>\r\n");
       out.write("            <img src=\"images/error.png\">\r\n");
-      out.write("            <h1 class=\"error\">Login error: Please fill out all required fields</h1>\r\n");
+      out.write("            <h1>Login error: Please fill out all required fields</h1>\r\n");
       out.write("            <form action = \"login\" method = \"post\">\r\n");
       out.write("                <label>\r\n");
       out.write("                    <font color = \"red\">*</font>Username: \r\n");
