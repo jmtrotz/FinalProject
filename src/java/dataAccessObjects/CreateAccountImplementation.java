@@ -1,6 +1,7 @@
-package objectMapping;
+package dataAccessObjects;
 
 import java.util.Set;
+import objectMapping.Student;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -11,7 +12,8 @@ public class CreateAccountImplementation implements CreateAccountInterface {
 
     private static SessionFactory factory;
 
-    public static void setSessionFactory(SessionFactory factory) {
+    public static void setSessionFactory(SessionFactory factory) 
+    {
         CreateAccountImplementation.factory = factory;
     }
 

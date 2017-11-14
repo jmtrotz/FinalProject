@@ -6,8 +6,11 @@
         <title>
             Easel
         </title>
-        <link rel = "shortcut icon" href = "./images/logo.png"/>
-        <link rel = "stylesheet" href = "./css/styleSheet.css"/>
+        <link rel = "shortcut icon" href = "images/logo.png"/>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="styles.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     </head>
     <body>
         <fieldset>
@@ -15,18 +18,22 @@
                 Create Account
                 (<font color = "red">*</font> = required)
             </legend>
-            <h1>
-                Error creating account: passwords don't match
-            </h1>
-            <form action = "login" method = "post">
+            <img src="images/error.png">
+            <h1>Error creating account: Passwords don't match</h1>
+            <form action = "createAccount" method = "post">
                 <label>
                     <font color = "red">*</font>Student ID: 
                     <input type = "text" name = "studentID"/>
                 </label>
                 <br>
                 <label>
-                    <font color = "red">*</font>Name: 
-                    <input type = "password" name = "name"/>
+                    <font color = "red">*</font>First Name: 
+                    <input type = "text" name = "firstName"/>
+                </label>
+                <br>
+                <label>
+                    <font color = "red">*</font>Last Name: 
+                    <input type = "text" name = "lastName"/>
                 </label>
                 <br>
                 <label>
@@ -41,7 +48,7 @@
                 <br>
                 <label>
                     <font color = "red">*</font>Confirm Password: 
-                    <input type = "text" name = "confirmPassword"/>
+                    <input type = "password" name = "confirmPassword"/>
                 </label>
                 <br>
                 <label>

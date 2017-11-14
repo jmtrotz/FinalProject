@@ -3,7 +3,7 @@
        xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation = "http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
-    <bean id = "login" class = "objectMapping.LoginImplementation" scope = "session">
+    <bean id = "login" class = "dataAccessObjects.LoginImplementation" scope = "session">
         <property name="sessionFactory" ref="factory" />
         <property name="mappingResources">
             <list>
@@ -12,7 +12,7 @@
             </list>
         </property>
     </bean>
-    <bean id = "createAccount" class = "servlets.CreateAccountServlet" scope = "session">
+    <bean id = "createAccount" class = "controllers.CreateAccountController" scope = "session">
         <property name="sessionFactory" ref="factory" />
         <property name="mappingResources">
             <list>

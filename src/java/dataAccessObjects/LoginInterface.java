@@ -1,4 +1,4 @@
-package objectMapping;
+package dataAccessObjects;
 
 public interface LoginInterface {
 

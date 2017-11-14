@@ -6,18 +6,21 @@
         <title>
             Easel
         </title>
-        <link rel = "shortcut icon" href = "./images/logo.png"/>
-        <link rel = "stylesheet" href = "./css/styleSheet.css"/>
+        <link rel = "shortcut icon" href = "images/logo.png"/>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="styles.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     </head>
     <body>
+        <div class="container-fluid bg-1 text-center">
         <fieldset>
             <legend>
                 Login
                 (<font color = "red">*</font> = required)
             </legend>
-            <h1>
-                Login error: please fill out all required fields
-            </h1>
+            <img src="images/error.png">
+            <h1>Login error: Please fill out all required fields</h1>
             <form action = "login" method = "post">
                 <label>
                     <font color = "red">*</font>Username: 
@@ -34,5 +37,6 @@
                 Don't have an account? Create one <a href = "createAccount.jsp">here!</a>
             </form>
         </fieldset>
+        </div>
     </body>
 </html>

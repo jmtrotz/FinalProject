@@ -1,4 +1,4 @@
-package objectMapping;
+package dataAccessObjects;
 
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
