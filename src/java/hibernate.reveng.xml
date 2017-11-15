@@ -44,5 +44,4 @@ Contributor(s):
 <hibernate-reverse-engineering>
     <schema-selection match-schema="APP"/>
     <table-filter match-name="STUDENT"/>
-    <table-filter match-name="CLASSES"/>
 </hibernate-reverse-engineering>

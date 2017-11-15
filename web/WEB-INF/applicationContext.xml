@@ -15,7 +15,6 @@
         </property>
         <property name="mappingResources">
             <list>
-                <value>objectMapping/Classes.hbm.xml</value>  
                 <value>objectMapping/Student.hbm.xml</value>
             </list>
         </property>

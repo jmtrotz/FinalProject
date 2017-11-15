@@ -44,27 +44,44 @@ Contributor(s):
 <hibernate-mapping>
     <class name="objectMapping.Student" table="STUDENT" schema="APP" optimistic-lock="version">
         <id name="studentID" type="string">
-            <column name="STUDENTID" length="10"/>
+            <column name="STUDENTID" length="20" not-null="true"/>
             <generator class="assigned"/>
         </id>
         <property name="firstName" type="string">
-            <column name="FIRSTNAME" length="10"/>
+            <column name="FIRSTNAME" length="20" not-null="true"/>
         </property>
         <property name="lastName" type="string">
-            <column name="LASTNAME" length="10"/>
+            <column name="LASTNAME" length="20" not-null="true"/>
         </property>
         <property name="username" type="string">
-            <column name="USERNAME" length="10"/>
+            <column name="USERNAME" length="20" not-null="true"/>
         </property>
         <property name="password" type="string">
-            <column name="PASSWORD" length="10"/>
+            <column name="PASSWORD" length="20" not-null="true"/>
         </property>
         <property name="email" type="string">
-            <column name="EMAIL" length="20"/>
+            <column name="EMAIL" length="20" not-null="true"/>
         </property>
-        <set name="classes" cascade="all">
-            <key column="STUDENTID"/>
-            <one-to-many class="objectMapping.Classes"/>
-        </set>
+        <property name="class1" type="string">
+            <column name="CLASS1" length="20"/>
+        </property>
+        <property name="class2" type="string">
+            <column name="CLASS2" length="20"/>
+        </property>
+        <property name="class3" type="string">
+            <column name="CLASS3" length="20"/>
+        </property>
+        <property name="class4" type="string">
+            <column name="CLASS4" length="20"/>
+        </property>
+        <property name="class5" type="string">
+            <column name="CLASS5" length="20"/>
+        </property>
+        <property name="class6" type="string">
+            <column name="CLASS6" length="20"/>
+        </property>
+        <property name="class7" type="string">
+            <column name="CLASS7" length="20"/>
+        </property>
     </class>
 </hibernate-mapping>

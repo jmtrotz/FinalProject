@@ -1,8 +1,6 @@
 package objectMapping;
 
 // Generated Nov 4, 2017 5:04:48 PM by Hibernate Tools 4.3.1
-import java.util.Set;
-
 public class Student implements java.io.Serializable {
 
     private String studentID;
@@ -11,20 +9,34 @@ public class Student implements java.io.Serializable {
     private String username;
     private String password;
     private String email;
-    private Set classes;
+    private String class1;
+    private String class2;
+    private String class3;
+    private String class4;
+    private String class5;
+    private String class6;
+    private String class7;
 
     public Student() {
 
     }
 
     public Student(String studentID, String firstName, String lastName,
-            String username, String password, String email, Set classes) {
+            String username, String password, String email, String class1,
+            String class2, String class3, String class4, String class5,
+            String class6, String class7) {
         this.studentID = studentID;
         this.firstName = firstName;
         this.username = username;
         this.password = password;
         this.email = email;
-        this.classes = classes;
+        this.class1 = class1;
+        this.class2 = class2;
+        this.class3 = class3;
+        this.class4 = class4;
+        this.class5 = class5;
+        this.class6 = class6;
+        this.class7 = class7;
     }
 
     public String getStudentID() {
@@ -75,11 +87,59 @@ public class Student implements java.io.Serializable {
         this.email = email;
     }
 
-    public Set getClasses() {
-        return classes;
+    public String getClass1() {
+        return class1;
     }
 
-    public void setClasses(Set classes) {
-        this.classes = classes;
+    public void setClass1(String class1) {
+        this.class1 = class1;
+    }
+
+    public String getClass2() {
+        return class2;
+    }
+
+    public void setClass2(String class2) {
+        this.class2 = class2;
+    }
+
+    public String getClass3() {
+        return class3;
+    }
+
+    public void setClass3(String class3) {
+        this.class3 = class3;
+    }
+
+    public String getClass4() {
+        return class4;
+    }
+
+    public void setClass4(String class4) {
+        this.class4 = class4;
+    }
+
+    public String getClass5() {
+        return class5;
+    }
+
+    public void setClass5(String class5) {
+        this.class5 = class5;
+    }
+
+    public String getClass6() {
+        return class6;
+    }
+
+    public void setClass6(String class6) {
+        this.class6 = class6;
+    }
+
+    public String getClass7() {
+        return class7;
+    }
+
+    public void setClass7(String class7) {
+        this.class7 = class7;
     }
 }

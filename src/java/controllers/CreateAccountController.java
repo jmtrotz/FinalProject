@@ -1,26 +1,21 @@
 package controllers;
 
-import java.util.HashSet;
-import java.util.Set;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.Controller;
 import dataAccessObjects.CreateAccountInterface;
 
-public class CreateAccountController implements Controller
-{
+public class CreateAccountController implements Controller {
+
     private CreateAccountInterface createAccount;
-    
-    public void setCreateAccountInterface(CreateAccountInterface createAccount) 
-    {
+
+    public void setCreateAccountInterface(CreateAccountInterface createAccount) {
         this.createAccount = createAccount;
     }
-    
+
     @Override
-    public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) throws Exception 
-    {
-        String redirectAddress = "";
+    public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {
         String studentID = request.getParameter("studentID");
         String firstName = request.getParameter("firstName");
         String lastName = request.getParameter("lastName");
@@ -35,38 +30,23 @@ public class CreateAccountController implements Controller
         String class5 = request.getParameter("class5");
         String class6 = request.getParameter("class6");
         String class7 = request.getParameter("class7");
-        Set classes = new HashSet();
-        classes.add(class1);
-        classes.add(class2);
-        classes.add(class3);
-        classes.add(class4);
-        classes.add(class5);
-        classes.add(class6);
-        classes.add(class7);
+        String redirectAddress = "";
 
-        if (studentID.length() == 0 || firstName.length() == 0 || 
-                lastName.length() == 0 || username.length() == 0 ||
-                password.length() == 0 || email.length() == 0) 
-        {
+        if (studentID.length() == 0 || firstName.length() == 0
+                || lastName.length() == 0 || username.length() == 0
+                || password.length() == 0 || email.length() == 0) {
             redirectAddress = "createAccountError-emptyFields";
-        } 
-        
-        else if (!createAccount.verifyPassword(password, confirmPassword)) 
-        {
+        } else if (!createAccount.verifyPassword(password, confirmPassword)) {
             redirectAddress = "createAccountError-passwordMismatch";
-        } 
-        
-        else if (!createAccount.verifyUsername(username)) 
-        {
+        } else if (!createAccount.verifyUsername(username)) {
             redirectAddress = "createAccountError-usernameTaken";
-        } 
-        
-        else 
-        {
-            createAccount.createAccount(studentID, firstName, lastName, username, password, email, classes);
+        } else {
+            createAccount.createAccount(studentID, firstName, lastName, username,
+                    password, email, class1, class2, class3, class4, class5,
+                    class6, class7);
             redirectAddress = "accountCreated";
         }
-        
+
         return new ModelAndView(redirectAddress);
     }
 }

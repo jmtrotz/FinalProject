@@ -16,9 +16,9 @@
         <property name="suffix" value=".jsp"></property>        
     </bean>
     <bean name="/login.htm" class="controllers.LoginController">
-        <property name="login" ref="login"/>
+        <property name="loginInterface" ref="login"/>
     </bean>
     <bean name="/createAccount.htm" class="controllers.CreateAccountController">
-        <property name="createAccount" ref="createAccount"/>
+        <property name="createAccountInterface" ref="createAccount"/>
     </bean>
 </beans>
