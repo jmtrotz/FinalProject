@@ -10,7 +10,7 @@ public class LoginController implements Controller
 {    
     private LoginInterface login;
     
-    public void setCustomerDao(LoginInterface login) 
+    public void setLoginInterface(LoginInterface login) 
     {
         this.login = login;
     }

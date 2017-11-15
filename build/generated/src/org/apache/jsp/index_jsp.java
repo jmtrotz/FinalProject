@@ -52,7 +52,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("    </head>\n");
       out.write("    <body>\n");
       out.write("        ");
- response.sendRedirect("login.jsp"); 
+response.sendRedirect("login.jsp");
       out.write("\n");
       out.write("    </body>\n");
       out.write("</html>");

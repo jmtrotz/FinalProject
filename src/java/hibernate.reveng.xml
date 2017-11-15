@@ -1,5 +1,6 @@
 <?xml version = "1.0" encoding = "UTF-8"?>
-<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" 
+<!DOCTYPE hibernate-reverse-engineering PUBLIC 
+"-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" 
 "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd">
 <!--
 DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
@@ -41,7 +42,7 @@ made subject to such option by the copyright holder.
 Contributor(s):
 -->
 <hibernate-reverse-engineering>
-    <schema-selection match-schema = "APP"/>
-    <table-filter match-name = "STUDENT"/>
-    <table-filter match-name = "CLASSES"/>
+    <schema-selection match-schema="APP"/>
+    <table-filter match-name="STUDENT"/>
+    <table-filter match-name="CLASSES"/>
 </hibernate-reverse-engineering>

@@ -1,5 +1,6 @@
-<?xml version = "1.0" encoding = "UTF-8"?>
-<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <!--
 DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
@@ -41,13 +42,13 @@ made subject to such option by the copyright holder.
 Contributor(s):
 -->
 <hibernate-mapping>
-    <class name = "objectMapping.Classes" table = "CLASSES" schema = "APP" optimistic-lock = "version">
-        <id name = "courseID" type = "string">
-            <column name = "COURSEID"/>
-            <generator class = "assigned"/>
+    <class name="objectMapping.Classes" table="CLASSES" schema="APP" optimistic-lock="version">
+        <id name="courseID" type="string">
+            <column name="COURSEID"/>
+            <generator class="assigned"/>
         </id>
-        <property name = "title" type = "string">
-            <column name = "TITLE" length = "20"/>
+        <property name="title" type="string">
+            <column name="TITLE" length="20"/>
         </property>
     </class>
 </hibernate-mapping>

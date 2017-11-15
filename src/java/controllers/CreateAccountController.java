@@ -12,7 +12,7 @@ public class CreateAccountController implements Controller
 {
     private CreateAccountInterface createAccount;
     
-    public void setCustomerDao(CreateAccountInterface createAccount) 
+    public void setCreateAccountInterface(CreateAccountInterface createAccount) 
     {
         this.createAccount = createAccount;
     }

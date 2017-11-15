@@ -1,5 +1,6 @@
-<?xml version = "1.0" encoding = "UTF-8"?>
-<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <!--
 DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
@@ -41,29 +42,29 @@ made subject to such option by the copyright holder.
 Contributor(s):
 -->
 <hibernate-mapping>
-    <class name = "objectMapping.Student" table = "STUDENT" schema = "APP" optimistic-lock = "version">
-        <id name = "studentID" type = "string">
-            <column name = "STUDENTID" length = "10"/>
-            <generator class = "assigned"/>
+    <class name="objectMapping.Student" table="STUDENT" schema="APP" optimistic-lock="version">
+        <id name="studentID" type="string">
+            <column name="STUDENTID" length="10"/>
+            <generator class="assigned"/>
         </id>
-        <property name = "firstName" type = "string">
-            <column name = "FIRSTNAME" length = "10"/>
+        <property name="firstName" type="string">
+            <column name="FIRSTNAME" length="10"/>
         </property>
-        <property name = "lastName" type = "string">
-            <column name = "LASTNAME" length = "10"/>
+        <property name="lastName" type="string">
+            <column name="LASTNAME" length="10"/>
         </property>
-        <property name = "username" type = "string">
-            <column name = "USERNAME" length="10"/>
+        <property name="username" type="string">
+            <column name="USERNAME" length="10"/>
         </property>
-        <property name = "password" type = "string">
-            <column name = "PASSWORD" length = "10"/>
+        <property name="password" type="string">
+            <column name="PASSWORD" length="10"/>
         </property>
-        <property name = "email" type = "string">
-            <column name = "EMAIL" length = "20"/>
+        <property name="email" type="string">
+            <column name="EMAIL" length="20"/>
         </property>
-        <set name = "classes" cascade = "all">
-            <key column = "STUDENTID"/>
-            <one-to-many class = "objectMapping.Classes"/>
+        <set name="classes" cascade="all">
+            <key column="STUDENTID"/>
+            <one-to-many class="objectMapping.Classes"/>
         </set>
     </class>
 </hibernate-mapping>
