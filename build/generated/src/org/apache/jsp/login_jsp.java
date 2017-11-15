@@ -61,7 +61,7 @@ public final class login_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                    Login\r\n");
       out.write("                    (<font color = \"red\">*</font> = required)\r\n");
       out.write("                </legend>\r\n");
-      out.write("                <form action = \"login\" method = \"post\">\r\n");
+      out.write("                <form action = \"login.htm\">\r\n");
       out.write("                    <label>\r\n");
       out.write("                        <font color = \"red\">*</font>Username: \r\n");
       out.write("                        <input type = \"text\" name = \"username\"/>\r\n");
@@ -75,7 +75,7 @@ public final class login_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                    <input type = \"submit\" value = \"Login\"/>\r\n");
       out.write("                    <br>\r\n");
       out.write("                    Don't have an account? Create one <a href = \"createAccount.jsp\">here!</a>\r\n");
-      out.write("                </form>\r\n");
+      out.write("                </form> \r\n");
       out.write("            </fieldset>\r\n");
       out.write("        </div>\r\n");
       out.write("    </body>\r\n");

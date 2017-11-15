@@ -32,6 +32,6 @@ public class LoginController implements Controller
             login.login(username, password);
         }
         
-        return new ModelAndView(redirectAddress, "login", null);
+        return new ModelAndView(redirectAddress);
     }
 }

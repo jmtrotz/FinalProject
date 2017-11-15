@@ -8,6 +8,6 @@
         </title>
     </head>
     <body>
-        <% response.sendRedirect("login.jsp"); %>
+        <%response.sendRedirect("login.jsp");%>
     </body>
 </html>

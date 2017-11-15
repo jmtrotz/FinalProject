@@ -18,7 +18,7 @@
                     Login
                     (<font color = "red">*</font> = required)
                 </legend>
-                <form action = "login" method = "post">
+                <form action = "login.htm">
                     <label>
                         <font color = "red">*</font>Username: 
                         <input type = "text" name = "username"/>

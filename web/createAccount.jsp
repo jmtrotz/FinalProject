@@ -18,7 +18,7 @@
                 Create Account
                 (<font color = "red">*</font> = required)
             </legend>
-            <form action = "createAccount" method = "post">
+            <form action = "createAccount.htm">
                 <label>
                     <font color = "red">*</font>Student ID: 
                     <input type = "text" name = "studentID"/>

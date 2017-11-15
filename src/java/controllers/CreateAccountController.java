@@ -67,6 +67,6 @@ public class CreateAccountController implements Controller
             redirectAddress = "accountCreated";
         }
         
-        return new ModelAndView(redirectAddress, "login", null);
+        return new ModelAndView(redirectAddress);
     }
 }
