@@ -9,7 +9,7 @@ public class LoginImplementation implements LoginInterface {
 
     private static SessionFactory factory;
 
-    public static void setFactory(SessionFactory factory) {
+    public static void setSessionFactory(SessionFactory factory) {
         LoginImplementation.factory = factory;
     }
 

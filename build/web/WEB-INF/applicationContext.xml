@@ -20,9 +20,9 @@
         </property>
     </bean>
     <bean id="login" class="dataAccessObjects.LoginImplementation">
-        <property name="factory" ref="factory"/>
+        <property name="sessionFactory" ref="factory"/>
     </bean>
     <bean id="createAccount" class="dataAccessObjects.CreateAccountImplementation">
-        <property name="factory" ref="factory"/>
+        <property name="sessionFactory" ref="factory"/>
     </bean>
 </beans>

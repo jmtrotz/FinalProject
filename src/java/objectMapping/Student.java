@@ -1,6 +1,5 @@
 package objectMapping;
 
-// Generated Nov 4, 2017 5:04:48 PM by Hibernate Tools 4.3.1
 public class Student implements java.io.Serializable {
 
     private String studentID;
@@ -47,7 +46,7 @@ public class Student implements java.io.Serializable {
         this.studentID = studentID;
     }
 
-    public String getFistName() {
+    public String getFirstName() {
         return firstName;
     }
 

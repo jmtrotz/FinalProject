@@ -44,7 +44,7 @@ Contributor(s):
 <hibernate-mapping>
     <class name="objectMapping.Student" table="STUDENT" schema="APP" optimistic-lock="version">
         <id name="studentID" type="string">
-            <column name="STUDENTID" length="20" not-null="true"/>
+            <column name="STUDENTID"/>
             <generator class="assigned"/>
         </id>
         <property name="firstName" type="string">

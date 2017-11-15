@@ -10,7 +10,7 @@ public class CreateAccountImplementation implements CreateAccountInterface {
 
     private static SessionFactory factory;
 
-    public static void setFactory(SessionFactory factory) {
+    public static void setSessionFactory(SessionFactory factory) {
         CreateAccountImplementation.factory = factory;
     }
 
