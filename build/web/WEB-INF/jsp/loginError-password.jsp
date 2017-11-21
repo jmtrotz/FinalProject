@@ -11,7 +11,7 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     </head>
     <body>        
-        <div class="container-fluid bg-1 text-center">
+        <div class="container-fluid bg-1" align="center">
             <fieldset>
                 <legend>
                     Login (<font color="red">*</font> = required)

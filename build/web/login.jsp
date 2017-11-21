@@ -10,12 +10,13 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
     <body>
-        <div class="container-fluid bg-1 text-center">
+        <div class="container-fluid bg-1" align="center">
             <fieldset>
                 <legend>
                     Login (<font color="red">*</font> = required)
                 </legend>
                 <form action="login.htm">
+                    <img src="images/logo.png">
                     <label>
                         <font color="red">*</font>Username: 
                         <input type="text" name="username"/>
