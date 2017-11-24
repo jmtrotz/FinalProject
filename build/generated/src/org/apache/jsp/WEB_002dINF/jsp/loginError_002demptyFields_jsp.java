@@ -1,10 +1,10 @@
-package org.apache.jsp;
+package org.apache.jsp.WEB_002dINF.jsp;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
 
-public final class login_jsp extends org.apache.jasper.runtime.HttpJspBase
+public final class loginError_002demptyFields_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
 
   private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
@@ -51,10 +51,13 @@ public final class login_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\">\r\n");
       out.write("        <link rel=\"stylesheet\" href=\"styles.css\">\r\n");
       out.write("        <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js\"></script>\r\n");
-      out.write("        <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js\"></script> \r\n");
+      out.write("        <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js\"></script>\r\n");
+      out.write("    </head>\r\n");
       out.write("    <body>\r\n");
-      out.write("        <div class=\"container-fluid bg-1\" align=\"center\">\r\n");
+      out.write("        <div class=\"container-fluid\" align=\"center\">\r\n");
       out.write("            <fieldset>\r\n");
+      out.write("                <img src=\"images/error.png\">\r\n");
+      out.write("                <h1>Login error: Please fill out all required fields</h1>\r\n");
       out.write("                <form action=\"login.htm\">\r\n");
       out.write("                    <img src=\"images/formLogo.png\" width=\"215\" height=\"63\">\r\n");
       out.write("                    <label>\r\n");
@@ -69,7 +72,7 @@ public final class login_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                    <br>\r\n");
       out.write("                    <input type=\"submit\" value=\"Login\"/>\r\n");
       out.write("                    <br>\r\n");
-      out.write("                    Don't have an account?\r\n");
+      out.write("                    Don't have an account?<br>\r\n");
       out.write("                    Create one <a href=\"createAccount.jsp\">here!</a>\r\n");
       out.write("                </form> \r\n");
       out.write("            </fieldset>\r\n");

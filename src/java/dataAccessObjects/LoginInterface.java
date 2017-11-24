@@ -1,6 +1,7 @@
 package dataAccessObjects;
 
-public interface LoginInterface {
+public interface LoginInterface
+{
 
     /**
      * @param username - The student's username

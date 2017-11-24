@@ -11,11 +11,8 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     </head>
     <body>
-        <div class="container-fluid bg-1" align="center">
+        <div class="container-fluid" align="center">
             <fieldset>
-                <legend>
-                    Create Account (<font color="red">*</font> = required)
-                </legend>
                 <form action="createAccount.htm">
                     <label>
                         <font color="red">*</font>Student ID: 
@@ -30,6 +27,11 @@
                     <label>
                         <font color="red">*</font>Last Name: 
                         <input type="text" name="lastName"/>
+                    </label>
+                    <br>
+                    <label>
+                        <font color="red">*</font>Email
+                        <input type="text" name="email"/>
                     </label>
                     <br>
                     <label>
