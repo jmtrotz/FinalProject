@@ -53,10 +53,10 @@ public class CreateAccountController implements Controller
         
         else 
         {
+            
             createAccount.createAccount(studentID, firstName, lastName, username,
                     password, email, class1, class2, class3, class4, class5,
                     class6, class7);
-            redirectAddress = "accountCreated";
         }
 
         return new ModelAndView(redirectAddress);
