@@ -27,14 +27,14 @@ public class LoginController implements Controller
             redirectAddress = "loginError-emptyFields";
         }
         
-        else if (login.verifyUsername(username))
+        else if (login.userExistsInDB(username))
         {
             redirectAddress = "loginError-username";
         }
         
-        else if (login.verifyPassword(username, password))
+        else if (login.passwordMatchesUsername(username, password))
         {
-            redirectAddress = "loginError-account";
+            redirectAddress = "loginError-password";
         }
         
         else

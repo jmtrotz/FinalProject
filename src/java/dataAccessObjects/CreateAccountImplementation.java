@@ -52,9 +52,34 @@ public class CreateAccountImplementation implements CreateAccountInterface
 
     // Still working on this...
     @Override
-    public boolean verifyUsername(String username)
+    public boolean userExistsInDB(String username)
     {
         boolean usernameExists = false;
+        Session session = factory.openSession();
+        
+        try
+        {
+            session.beginTransaction();
+            org.hibernate.Query query  = session.createQuery("FROM Student WHERE USERNAME = :username");
+            query.setParameter("username", username);
+        
+            if (query.uniqueResult() == null)
+            {
+                usernameExists = true;
+            }
+
+            session.getTransaction().commit();
+        } 
+        
+        catch (HibernateException hibernateException) 
+        {
+            hibernateException.printStackTrace();
+        } 
+        
+        finally 
+        {
+            session.close();
+        }
         
         return usernameExists;
     }

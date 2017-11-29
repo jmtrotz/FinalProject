@@ -46,7 +46,7 @@ public class CreateAccountController implements Controller
             redirectAddress = "createAccountError-passwordMismatch";
         } 
         
-        else if (createAccount.verifyUsername(username)) 
+        else if (createAccount.userExistsInDB(username)) 
         {
             redirectAddress = "createAccountError-usernameTaken";
         } 

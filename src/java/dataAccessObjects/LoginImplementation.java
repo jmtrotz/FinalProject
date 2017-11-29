@@ -3,7 +3,6 @@ package dataAccessObjects;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
 
 public class LoginImplementation implements LoginInterface 
 {
@@ -16,27 +15,33 @@ public class LoginImplementation implements LoginInterface
     
     // Still working on this...
     @Override
-    public boolean verifyUsername (String username)
+    public boolean userExistsInDB (String username)
     {
         boolean usernameExists = false;
         Session session = factory.openSession();
-        Transaction transaction = null;
         
         try
         {
-            org.hibernate.Query query =  session.createQuery("FROM STUDENT WHERE USERNAME = :userName");
-            query.setParameter("userName", username);
-            System.out.println(query.uniqueResult());
-        }
+            session.beginTransaction();
+            org.hibernate.Query query  = session.createQuery("FROM Student WHERE USERNAME = :username");
+            query.setParameter("username", username);
         
-        catch (HibernateException hibernateException)
-        {
-            if (transaction != null)
+            if (query.uniqueResult() == null)
             {
-                transaction.rollback();
+                usernameExists = true;
             }
-            
+
+            session.getTransaction().commit();
+        } 
+        
+        catch (HibernateException hibernateException) 
+        {
             hibernateException.printStackTrace();
+        } 
+        
+        finally 
+        {
+            session.close();
         }
         
         return usernameExists;
@@ -44,10 +49,35 @@ public class LoginImplementation implements LoginInterface
     
     // Still working on this...
     @Override
-    public boolean verifyPassword (String username, String password)
+    public boolean passwordMatchesUsername (String username, String password)
     {
-        boolean correctPassword = false;
+        boolean incorrectPassword = false;        
+        Session session = factory.openSession();
         
-        return correctPassword;
+        try
+        {
+            session.beginTransaction();
+            org.hibernate.Query query  = session.createQuery("FROM Student WHERE PASSWORD = :password");
+            query.setParameter("password", password);
+        
+            if ((this.userExistsInDB(username) == false) && query.uniqueResult() == null)
+            {
+                incorrectPassword = true;
+            }
+
+            session.getTransaction().commit();
+        } 
+        
+        catch (HibernateException hibernateException) 
+        {
+            hibernateException.printStackTrace();
+        } 
+        
+        finally 
+        {
+            session.close();
+        }
+        
+        return incorrectPassword;
     }
 }

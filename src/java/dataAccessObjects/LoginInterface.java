@@ -2,6 +2,6 @@ package dataAccessObjects;
 
 public interface LoginInterface
 {
-    public boolean verifyUsername (String username);
-    public boolean verifyPassword (String username, String password);
+    public boolean userExistsInDB (String username);
+    public boolean passwordMatchesUsername (String username, String password);
 }
