@@ -14,7 +14,7 @@
         <div class="container-fluid" align="center">
             <fieldset>
                 <img src="images/error.png">
-                <h1>Login error: Invalid password</h1>
+                <h1>Login error: Password does not match username</h1>
                 <form action="login.htm">
                     <img src="images/formLogo.png" width="215" height="63">
                     <label>

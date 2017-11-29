@@ -41,12 +41,12 @@ public class CreateAccountController implements Controller
             redirectAddress = "createAccountError-emptyFields";
         } 
         
-        else if (!createAccount.verifyPassword(password, confirmPassword)) 
+        else if (!password.equals(confirmPassword)) 
         {
             redirectAddress = "createAccountError-passwordMismatch";
         } 
         
-        else if (!createAccount.verifyUsername(username)) 
+        else if (createAccount.verifyUsername(username)) 
         {
             redirectAddress = "createAccountError-usernameTaken";
         } 
@@ -57,6 +57,7 @@ public class CreateAccountController implements Controller
             createAccount.createAccount(studentID, firstName, lastName, username,
                     password, email, class1, class2, class3, class4, class5,
                     class6, class7);
+            redirectAddress = "accountCreated";
         }
 
         return new ModelAndView(redirectAddress);

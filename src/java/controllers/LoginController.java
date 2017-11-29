@@ -25,11 +25,21 @@ public class LoginController implements Controller
         if (username.length() == 0 || password.length() == 0) 
         {
             redirectAddress = "loginError-emptyFields";
-        } 
+        }
         
-        else 
+        else if (login.verifyUsername(username))
         {
-            login.login(username, password);
+            redirectAddress = "loginError-username";
+        }
+        
+        else if (login.verifyPassword(username, password))
+        {
+            redirectAddress = "loginError-account";
+        }
+        
+        else
+        {
+            redirectAddress = "viewClasses";
         }
         
         return new ModelAndView(redirectAddress);

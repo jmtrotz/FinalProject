@@ -8,6 +8,4 @@ public interface CreateAccountInterface
             String class6, String class7);
 
     public boolean verifyUsername(String username);
-
-    public boolean verifyPassword(String password, String confirmPassword);
 }

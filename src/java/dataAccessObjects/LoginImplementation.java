@@ -13,33 +13,41 @@ public class LoginImplementation implements LoginInterface
     {
         LoginImplementation.factory = factory;
     }
-
-    // Not done yet. Still working on it...
+    
+    // Still working on this...
     @Override
-    public void login(String username, String password)
+    public boolean verifyUsername (String username)
     {
+        boolean usernameExists = false;
         Session session = factory.openSession();
-        Transaction tx = null;
-
-        try 
-        {
-            tx = session.beginTransaction();
-            tx.commit();
-        } 
+        Transaction transaction = null;
         
-        catch (HibernateException e) 
+        try
         {
-            if (tx != null)
-            {
-                tx.rollback();
-            }
-
-            e.printStackTrace();
-        } 
-        
-        finally 
-        {
-            session.close();
+            org.hibernate.Query query =  session.createQuery("FROM STUDENT WHERE USERNAME = :userName");
+            query.setParameter("userName", username);
+            System.out.println(query.uniqueResult());
         }
+        
+        catch (HibernateException hibernateException)
+        {
+            if (transaction != null)
+            {
+                transaction.rollback();
+            }
+            
+            hibernateException.printStackTrace();
+        }
+        
+        return usernameExists;
+    }
+    
+    // Still working on this...
+    @Override
+    public boolean verifyPassword (String username, String password)
+    {
+        boolean correctPassword = false;
+        
+        return correctPassword;
     }
 }
