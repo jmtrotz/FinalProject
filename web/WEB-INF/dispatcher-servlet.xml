@@ -1,4 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Spring MVC configuration file containing the view resolver and mappings for
+    the login and account creation beans
+    Class: CT406
+    Date: 11/29/17
+    Authors: Jeffrey Trotz & William Varner
+    Version: 1.0
+-->
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:aop="http://www.springframework.org/schema/aop"
@@ -9,7 +17,6 @@
        http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
        http://www.springframework.org/schema/tx 
        http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">
-   <!-- <bean class="org.springframework.web.servlet.mvc.support.ControllerClassNameHandlerMapping"/>-->
     <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"></property>
         <property name="prefix" value="/WEB-INF/jsp/"></property>

@@ -1,3 +1,10 @@
+<!--
+    Page displayed after a successful login
+    Class: CT406
+    Date: 11/29/17
+    Authors: Jeffrey Trotz & William Varner
+    Version: 1.0
+-->
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>

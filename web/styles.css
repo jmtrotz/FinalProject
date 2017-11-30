@@ -1,23 +1,38 @@
+/* 
+ * Background color for the body of the page 
+ */
 body { 
     background-color: #4F94CD;
     text-align: center;
 }
 
+/* 
+ * Another background color
+ */
 .bg-1 { 
     background-color: #4F94CD; 
     color: #ffffff;
 }
 
+/* 
+ * Another background color
+ */
 .bg-2 { 
     background-color: #474e5d; 
     color: #ffffff;
 }
 
+/* 
+ * Another background color
+ */
 .bg-3 { 
     background-color: #ffffff;
     color: #555555;
 }
 
+/* 
+ * Stying for the login and account creation forms
+ */
 form {
     border: 3px solid #000000;
     border-radius: 25px;
