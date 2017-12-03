@@ -41,6 +41,13 @@ public final class login_jsp extends org.apache.jasper.runtime.HttpJspBase
       _jspx_out = out;
       _jspx_resourceInjector = (org.glassfish.jsp.api.ResourceInjector) application.getAttribute("com.sun.appserv.jsp.resource.injector");
 
+      out.write("<!--\r\n");
+      out.write("    Page to login to the website\r\n");
+      out.write("    Class: CT406\r\n");
+      out.write("    Date: 11/29/17\r\n");
+      out.write("    Authors: Jeffrey Trotz & William Varner\r\n");
+      out.write("    Version: 1.0\r\n");
+      out.write("-->\r\n");
       out.write("\r\n");
       out.write("<!DOCTYPE html>\r\n");
       out.write("<html>\r\n");

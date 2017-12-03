@@ -1,5 +1,7 @@
 package dataAccessObjects;
 
+import java.util.ArrayList;
+
 /**
  * Interface for login methods
  * @Class CT 406
@@ -23,4 +25,11 @@ public interface LoginInterface
      * @return Returns true if the password and username don't match, false if they don't
      */
     public boolean passwordMatchesUsername (String username, String password);
+    
+    /**
+     * Method to get a list of classes the student is enrolled in
+     * @param username Username entered into the login form
+     * @return Returns a list of classes the student is enrolled in
+     */
+    public ArrayList listClasses(String username);
 }

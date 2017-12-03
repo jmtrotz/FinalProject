@@ -6,6 +6,7 @@
     Version: 1.0
 -->
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -20,24 +21,12 @@
     <body>
         <div class="container-fluid bg-1 text-center">
             <div class="row">
-                <div class="col-xs-4">
-                    <img src="images/folder.png" class="img-circle">
-                    <h3>CS 376</h3>
-                    <img src="images/folder.png" class="img-circle">
-                    <h3>CS 230</h3>
-                </div>
-                <div class="col-xs-4">
-                    <img src="images/folder.png" class="img-circle">
-                    <h3>CS 405</h3>
-                    <img src="images/folder.png" class="img-circle">
-                    <h3>CT 406</h3>
-                </div>
-                <div class="col-xs-4">
-                    <img src="images/folder.png" class="img-circle">
-                    <h3>SE 321</h3>
-                    <img src="images/folder.png" class="img-circle">
-                    <h3>EN 408</h3>
-                </div>
+                <c:forEach items="${classList}" var="class">
+                    <div class="col-xs-4">
+                        <img src="images/folder.png" class="img-circle">
+                        <h3><c:out value="${class}"/></h3>
+                    </div>
+                </c:forEach>
             </div>
         </div>
     </body>

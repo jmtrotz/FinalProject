@@ -55,7 +55,7 @@ public class LoginController implements Controller
         }
         
         // Make sure the password matches the username
-        else if (login.passwordMatchesUsername(username, password))
+        else if (!login.passwordMatchesUsername(username, password))
         {
             redirectAddress = "loginError-password";
         }
@@ -67,6 +67,6 @@ public class LoginController implements Controller
         }
         
         // Return the new view
-        return new ModelAndView(redirectAddress);
+        return new ModelAndView(redirectAddress, "classList", login.listClasses(username));
     }
 }

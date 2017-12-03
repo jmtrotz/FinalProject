@@ -1,6 +1,8 @@
 package dataAccessObjects;
 
 // Import packages
+import java.util.ArrayList;
+import objectMapping.Student;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -50,8 +52,6 @@ public class LoginImplementation implements LoginInterface
             {
                 usernameExists = true;
             }
-
-            session.getTransaction().commit();
         } 
         
         catch (HibernateException hibernateException) 
@@ -81,24 +81,24 @@ public class LoginImplementation implements LoginInterface
     {
         // Start a new session
         Session session = factory.openSession();
-        boolean incorrectPassword = false;
+        boolean passwordMatches = false;
         
         try
         {
-            // Check the password matches the username in the database
+            // Check if the username exists in the database
             session.beginTransaction();
             org.hibernate.Query query  = session.createQuery("FROM Student "
-                    + "WHERE USERNAME = :username AND PASSWORD = :password");
+                    + "WHERE USERNAME = :username");
             query.setParameter("username", username);
-            query.setParameter("password", password);
-        
-            // If the password doesn't match the username, set incorrectPassword to true
-            if (query.uniqueResult() == null)
+            
+            // If the username exists, all data is stored in a student object
+            Student student = (Student) query.uniqueResult();
+            
+            // Compare data from the student object with what was entered into the form
+            if ((student.getUsername().equals(username)) && (student.getPassword().equals(password)))
             {
-                incorrectPassword = true;
+                passwordMatches = true;
             }
-
-            session.getTransaction().commit();
         } 
         
         catch (HibernateException hibernateException) 
@@ -114,6 +114,55 @@ public class LoginImplementation implements LoginInterface
         }
         
         // Return the results
-        return incorrectPassword;
+        return passwordMatches;
+    }
+    
+    /**
+     * Method to get a list of classes the student is enrolled in
+     * @param username Username entered into the login form
+     * @return Returns a list of classes the student is enrolled in
+     */
+    @Override
+    public ArrayList listClasses(String username) 
+    {
+        // Start a new session
+        Session session = factory.openSession();
+        ArrayList<String> classList = new ArrayList<>();
+        
+        try
+        {
+            // Check if the username exists in the database
+            session.beginTransaction();
+            org.hibernate.Query query  = session.createQuery("FROM Student "
+                    + "WHERE USERNAME = :username");
+            query.setParameter("username", username);
+            
+            // If the username exists, all data is stored in a student object
+            Student student = (Student) query.uniqueResult();
+            
+            // Add the classes the student is in to the list
+            classList.add(student.getClass1());
+            classList.add(student.getClass2());
+            classList.add(student.getClass3());
+            classList.add(student.getClass4());
+            classList.add(student.getClass5());
+            classList.add(student.getClass6());
+            classList.add(student.getClass7());
+        } 
+        
+        catch (HibernateException hibernateException) 
+        {
+            // Print a stack trace if there's an error
+            hibernateException.printStackTrace();
+        } 
+        
+        finally 
+        {
+            // Close the session to conserve resources
+            session.close();
+        }
+        
+        System.out.println(classList);
+        return classList;
     }
 }

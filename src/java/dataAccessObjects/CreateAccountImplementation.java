@@ -32,9 +32,9 @@ public class CreateAccountImplementation implements CreateAccountInterface
      * @param studentID Student's school issued student ID number
      * @param firstName Student's first name
      * @param lastName Student's last name
+     * @param email Student's email address
      * @param username Username chosen by the student
      * @param password Password chosen by the student
-     * @param email Student's email address
      * @param class1 Class the student might be taking
      * @param class2 Class the student might be taking
      * @param class3 Class the student might be taking
@@ -45,7 +45,7 @@ public class CreateAccountImplementation implements CreateAccountInterface
      */
     @Override
     public void createAccount(String studentID, String firstName, String lastName,
-            String username, String password, String email, String class1,
+            String email, String username, String password, String class1,
             String class2, String class3, String class4, String class5,
             String class6, String class7)
     {
@@ -58,7 +58,7 @@ public class CreateAccountImplementation implements CreateAccountInterface
             // Add the student to the database
             transaction = session.beginTransaction();
             Student student = new Student(studentID, firstName, lastName,
-                    username, password, email, class1, class2, class3, class4,
+                    email, username, password, class1, class2, class3, class4,
                     class5, class6, class7);
             session.save(student);
             transaction.commit();
@@ -92,7 +92,7 @@ public class CreateAccountImplementation implements CreateAccountInterface
     {
         // Start a new session
         Session session = factory.openSession();
-        boolean usernameExists = false;
+        boolean usernameTaken = true;
         
         try
         {
@@ -104,7 +104,7 @@ public class CreateAccountImplementation implements CreateAccountInterface
             // If the username exists, set usernameExists to true
             if (query.uniqueResult() == null)
             {
-                usernameExists = true;
+                usernameTaken = false;
             }
 
             session.getTransaction().commit();
@@ -123,6 +123,6 @@ public class CreateAccountImplementation implements CreateAccountInterface
         }
         
         // Return the results
-        return usernameExists;
+        return usernameTaken;
     }
 }

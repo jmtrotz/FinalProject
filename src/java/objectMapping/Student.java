@@ -49,7 +49,7 @@ public class Student implements java.io.Serializable
      * @param class7 Class the student might be taking
      */
     public Student(String studentID, String firstName, String lastName,
-            String username, String email, String password, String class1,
+            String email,  String username, String password, String class1,
             String class2, String class3, String class4, String class5,
             String class6, String class7) 
     {

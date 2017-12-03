@@ -21,14 +21,14 @@
         <property name="lastName" type="string">
             <column name="LASTNAME" length="20" not-null="true"/>
         </property>
+        <property name="email" type="string">
+            <column name="EMAIL" length="50" not-null="true"/>
+        </property>
         <property name="username" type="string">
             <column name="USERNAME" length="20" not-null="true"/>
         </property>
         <property name="password" type="string">
             <column name="PASSWORD" length="20" not-null="true"/>
-        </property>
-        <property name="email" type="string">
-            <column name="EMAIL" length="20" not-null="true"/>
         </property>
         <property name="class1" type="string">
             <column name="CLASS1" length="20"/>
