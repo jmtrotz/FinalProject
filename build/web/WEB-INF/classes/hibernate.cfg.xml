@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
 <!--
     Hibernate configuration file containing the database driver, URL, and other
     various pieces of database information.
@@ -7,17 +8,20 @@
     Authors: Jeffrey Trotz & William Varner
     Version: 1.0
 -->
-<!DOCTYPE hibernate-configuration PUBLIC 
-"-//Hibernate/Hibernate Configuration DTD 3.0//EN" 
-"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
-  <session-factory>
-    <property name="hibernate.dialect">org.hibernate.dialect.DerbyDialect</property>
-    <property name="hibernate.connection.driver_class">org.apache.derby.jdbc.ClientDriver</property>
-    <property name="hibernate.connection.url">jdbc:derby://localhost:1527/Database</property>
-    <property name="hibernate.connection.username">app</property>
-    <property name="hibernate.connection.password">app</property>
-    <mapping resource="objectMapping/Student.hbm.xml"/>
-    <mapping/>
-  </session-factory>
+    <session-factory>
+        <property name="hibernate.dialect">org.hibernate.dialect.DerbyDialect</property>
+        <property name="hibernate.connection.driver_class">org.apache.derby.jdbc.ClientDriver</property>
+        <property name="hibernate.connection.url">jdbc:derby://localhost:1527/Database</property>
+        <property name="hibernate.connection.username">app</property>
+        <property name="hibernate.connection.password">app</property>
+        <mapping resource="objectMapping/Student.hbm.xml"/>
+        <mapping resource="objectMapping/CS225.hbm.xml"/>
+        <mapping resource="objectMapping/CS230.hbm.xml"/>
+        <mapping resource="objectMapping/CS316.hbm.xml"/>
+        <mapping resource="objectMapping/CT376.hbm.xml"/>
+        <mapping resource="objectMapping/CT406.hbm.xml"/>
+        <mapping resource="objectMapping/SE321.hbm.xml"/>
+        <mapping resource="objectMapping/SE458.hbm.xml"/>
+    </session-factory>
 </hibernate-configuration>

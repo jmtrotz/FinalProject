@@ -6,6 +6,7 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import dataAccessObjects.LoginInterface;
+import javax.servlet.http.HttpSession;
 
 /**
  * Controller for the login page
@@ -41,6 +42,9 @@ public class LoginController implements Controller
         String username = request.getParameter("username");
         String password = request.getParameter("password");
         String redirectAddress = "";
+        
+        HttpSession session = request.getSession();
+        session.setAttribute("username", username);
 
         // Make sure the login form was completely filled out
         if (username.length() == 0 || password.length() == 0) 

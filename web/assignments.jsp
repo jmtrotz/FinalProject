@@ -1,10 +1,3 @@
-<!--
-    Page displayed after a successful login
-    Class: CT406
-    Date: 11/29/17
-    Authors: Jeffrey Trotz & William Varner
-    Version: 1.0
--->
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
@@ -19,17 +12,22 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     </head>
     <body>
-        <div class="container-fluid bg-1 text-center">
-            <div class="row">
-                <c:forEach items="${classList}" var="class">
-                    <div class="col-xs-4">
-                        <a href="class.jsp">
-                            <img src="images/folder.png" class="img-circle">
-                        </a>
-                        <h3><c:out value="${class}"/></h3>
-                    </div>
-                </c:forEach>
-            </div>
+        <div class="col-xs-2 bg-2">
+            <a href="grades.jsp"><h3>Grades</h3></a>
+            <a href="assignments.jsp"><h3>Assignments</h3></a>
+            <a href=""><h3>Files</h3></a>
+            <a href="people.jsp"><h3>People</h3></a>
+        </div>
+        <div class="col-xs-10 bg-1">
+            <c:forEach items="${assignmentList}" var="assignment">
+                <table>
+                    <tr>
+                        <td>
+                            <c:out value="${assignment}"/>
+                        </td>
+                    </tr>
+                </table>
+            </c:forEach>
         </div>
     </body>
 </html>

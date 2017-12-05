@@ -23,7 +23,9 @@
             <div class="row">
                 <c:forEach items="${classList}" var="class">
                     <div class="col-xs-4">
-                        <img src="images/folder.png" class="img-circle">
+                        <a href="class.jsp">
+                            <img src="images/folder.png" class="img-circle">
+                        </a>
                         <h3><c:out value="${class}"/></h3>
                     </div>
                 </c:forEach>

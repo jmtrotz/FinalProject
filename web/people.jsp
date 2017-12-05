@@ -1,4 +1,5 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -18,7 +19,20 @@
             <a href="people.jsp"><h3>People</h3></a>
         </div>
         <div class="col-xs-10 bg-1">
-            <h1>Welcome to the class!</h1>
+            <c:forEach items="${peopletList}" var="people">
+                <c:forEach items="${emailList}" var="email">
+                    <table>
+                        <tr>
+                            <td>
+                                <c:out value="${people}"/>
+                            </td>
+                            <td>
+                                <c:out value="${email}"/>
+                            </td>
+                        </tr>
+                    </table>
+                </c:forEach>
+            </c:forEach>
         </div>
     </body>
 </html>

@@ -162,7 +162,6 @@ public class LoginImplementation implements LoginInterface
             session.close();
         }
         
-        System.out.println(classList);
         return classList;
     }
 }

@@ -1,4 +1,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import = "javax.servlet.http.HttpSession"%>
+<jsp:useBean id="grades" class="beans.GradesBean" scope="session"/>
+<%@taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -17,8 +20,21 @@
             <a href=""><h3>Files</h3></a>
             <a href="people.jsp"><h3>People</h3></a>
         </div>
-        <div class="col-xs-10 bg-1">
-            <h1>Welcome to the class!</h1>
+        <div class="col-xs-10 bg-1"> 
+            <c:forEach items="${grades.listAssignments(username)}" var="assignment">
+                <c:forEach items="${grades.listGrades(username)}" var="grade">
+                    <table>
+                        <tr>
+                            <td>
+                                <c:out value="${assignment}"/>
+                            </td>
+                            <td>
+                                <c:out value="${grade}"/>
+                            </td>
+                        </tr>
+                    </table>
+                </c:forEach>
+            </c:forEach>
         </div>
     </body>
 </html>
