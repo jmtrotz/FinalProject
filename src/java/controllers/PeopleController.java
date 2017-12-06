@@ -1,7 +1,5 @@
-package beans;
+package controllers;
 
-import javax.inject.Named;
-import javax.enterprise.context.SessionScoped;
 import java.io.Serializable;
 import java.util.ArrayList;
 import javax.servlet.http.HttpServletRequest;
@@ -11,9 +9,7 @@ import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
-@Named(value = "peopleBean")
-@SessionScoped
-public class PeopleBean implements Serializable 
+public class PeopleController implements Serializable 
 {
     private static SessionFactory factory;
     

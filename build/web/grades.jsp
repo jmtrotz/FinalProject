@@ -1,6 +1,4 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<jsp:useBean id="assignments" class="beans.AssignmentsBean" scope="session"/>
-<jsp:useBean id="grades" class="beans.GradesBean" scope="session"/>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>

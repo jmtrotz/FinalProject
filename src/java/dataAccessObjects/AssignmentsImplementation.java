@@ -1,8 +1,5 @@
-package beans;
+package dataAccessObjects;
 
-import javax.inject.Named;
-import javax.enterprise.context.SessionScoped;
-import java.io.Serializable;
 import java.util.ArrayList;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -11,9 +8,7 @@ import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
-@Named(value = "assignmentsBean")
-@SessionScoped
-public class AssignmentsBean implements Serializable 
+public class AssignmentsImplementation 
 {
     private static SessionFactory factory;
     

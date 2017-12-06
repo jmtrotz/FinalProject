@@ -38,14 +38,11 @@
     </bean> 
     <bean id="login" class="dataAccessObjects.LoginImplementation">
         <property name="sessionFactory" ref="factory" />
-    </bean> 
-    <bean id="grades" class="beans.GradesBean">
-        <property name="listGrades" ref="" />
     </bean>
-    <bean id="assignments" class="beans.AssignmentsBean">
-        <property name="listAssignments" ref="" />
+    <bean id="grades" class="dataAccessObjects.GradesImplementation">
+        <property name="sessionFactory" ref="factory" />
     </bean>
-    <bean id="people" class="beans.PeopleBean">
-        <property name="listPeople" ref="" />
+    <bean id="assignments" class="dataAccessObjects.AssignmentsImplementation">
+        <property name="sessionFactory" ref="factory" />
     </bean>
 </beans>

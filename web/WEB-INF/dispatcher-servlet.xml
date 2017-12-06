@@ -28,4 +28,10 @@
     <bean name="/login.htm" class="controllers.LoginController">
         <property name="loginInterface" ref="login"/>
     </bean>
+    <bean name="/grades.htm" class="controllers.GradesController">
+        <property name="gradesInterface" ref="grades"/>
+    </bean>
+    <bean name="/assignments.htm" class="controllers.AssignmentsController">
+        <property name="assignmentsInterface" ref="assignments"/>
+    </bean>
 </beans>

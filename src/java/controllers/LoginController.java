@@ -71,6 +71,9 @@ public class LoginController implements Controller
         HttpSession session = request.getSession();
         session.setAttribute("username", username);
         
+        ModelAndView objects = new ModelAndView();
+        objects.addObject(username, username);
+                
         // Return the new view
         return new ModelAndView(redirectAddress, "classList", login.listClasses(username));
     }

@@ -1,18 +1,31 @@
-package beans;
+package dataAccessObjects;
 
 import java.util.ArrayList;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import objectMapping.CS225;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import javax.servlet.http.HttpSession;
-import javax.servlet.http.HttpServletRequest;
 
-public class GradesBean
+/**
+ *
+ * @author jmtro
+ */
+public class GradesImplementation 
 {
     private static SessionFactory factory;
+
+    /**
+     * Set session factory
+     * @param factory Hibernate session factory
+     */
+    public static void setSessionFactory(SessionFactory factory)
+    {
+        GradesImplementation.factory = factory;
+    }
     
-    public ArrayList listGrades(HttpServletRequest request) 
+    public ArrayList listGrades(HttpServletRequest request)
     {
         HttpSession httpSession = request.getSession();
         String username = httpSession.getAttribute("username").toString();
