@@ -1,24 +1,29 @@
 package beans;
 
+import javax.inject.Named;
+import javax.enterprise.context.SessionScoped;
+import java.io.Serializable;
 import java.util.ArrayList;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import objectMapping.CS225;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import javax.servlet.http.HttpSession;
-import javax.servlet.http.HttpServletRequest;
 
-public class GradesBean
+@Named(value = "assignmentsBean")
+@SessionScoped
+public class AssignmentsBean implements Serializable 
 {
     private static SessionFactory factory;
     
-    public ArrayList listGrades(HttpServletRequest request) 
+    public ArrayList listAssignments(HttpServletRequest request) 
     {
         HttpSession httpSession = request.getSession();
         String username = httpSession.getAttribute("username").toString();
         
         Session session = factory.openSession();
-        ArrayList<String> gradesList = new ArrayList<>();
+        ArrayList<String> assignmentsList = new ArrayList<>();
         
         try 
         {
@@ -28,11 +33,12 @@ public class GradesBean
             query.setParameter("username", username);
 
             CS225 cs225 = (CS225) query.uniqueResult();
-            gradesList.add(cs225.getGrade1());
-            gradesList.add(cs225.getGrade2());
-            gradesList.add(cs225.getGrade3());
-            gradesList.add(cs225.getGrade4());
-            gradesList.add(cs225.getGrade5());
+            assignmentsList.add(cs225.getAssignment1());
+            assignmentsList.add(cs225.getAssignment2());
+            assignmentsList.add(cs225.getAssignment3());
+            assignmentsList.add(cs225.getAssignment4());
+            assignmentsList.add(cs225.getAssignment5());
+            
         } 
         
         catch (HibernateException hibernateException) 
@@ -46,7 +52,7 @@ public class GradesBean
             // Close the session to conserve resources
             session.close();
         }
-
-        return gradesList;
+        
+        return assignmentsList;
     }
 }

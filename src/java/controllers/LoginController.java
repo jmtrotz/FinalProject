@@ -42,9 +42,6 @@ public class LoginController implements Controller
         String username = request.getParameter("username");
         String password = request.getParameter("password");
         String redirectAddress = "";
-        
-        HttpSession session = request.getSession();
-        session.setAttribute("username", username);
 
         // Make sure the login form was completely filled out
         if (username.length() == 0 || password.length() == 0) 
@@ -69,6 +66,10 @@ public class LoginController implements Controller
         {
             redirectAddress = "viewClasses";
         }
+        
+        // Store the username for future use in the session
+        HttpSession session = request.getSession();
+        session.setAttribute("username", username);
         
         // Return the new view
         return new ModelAndView(redirectAddress, "classList", login.listClasses(username));
