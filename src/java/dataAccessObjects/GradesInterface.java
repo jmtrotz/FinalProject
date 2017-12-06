@@ -1,7 +1,7 @@
 package dataAccessObjects;
 
+// Import packages
 import java.util.ArrayList;
-import javax.servlet.http.HttpServletRequest;
 
 /**
  * Interface for grade listing methods
@@ -12,5 +12,10 @@ import javax.servlet.http.HttpServletRequest;
  */
 public interface GradesInterface 
 {
-    public ArrayList listGrades(HttpServletRequest request);
+    /**
+     * Method to get the user's grades from the database
+     * @param username Username entered into the login form
+     * @return Returns an ArrayList containing the user's grades
+     */
+    public ArrayList listGrades(String username);
 }

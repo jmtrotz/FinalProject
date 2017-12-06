@@ -1,7 +1,7 @@
 package dataAccessObjects;
 
+// Import packages
 import java.util.ArrayList;
-import javax.servlet.http.HttpServletRequest;
 
 /**
  * Interface for assignment listing methods
@@ -12,5 +12,10 @@ import javax.servlet.http.HttpServletRequest;
  */
 public interface AssignmentsInterface 
 {
-    public ArrayList listAssignments(HttpServletRequest request);
+    /**
+     * Method to get the user's assignments from the database
+     * @param username Username entered into the login form
+     * @return Returns an ArrayList containing the user's assignments
+     */
+    public ArrayList listAssignments(String username);
 }

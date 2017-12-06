@@ -70,11 +70,8 @@ public class LoginController implements Controller
         // Store the username for future use in the session
         HttpSession session = request.getSession();
         session.setAttribute("username", username);
-        
-        ModelAndView objects = new ModelAndView();
-        objects.addObject(username, username);
                 
-        // Return the new view
+        // Return the new view and a list of the user's classes
         return new ModelAndView(redirectAddress, "classList", login.listClasses(username));
     }
 }
