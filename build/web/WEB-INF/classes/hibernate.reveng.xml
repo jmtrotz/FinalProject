@@ -12,4 +12,11 @@
 <hibernate-reverse-engineering>
     <schema-selection match-schema="APP"/>
     <table-filter match-name="STUDENT"/>
+    <table-filter match-name="CS225"/>
+    <table-filter match-name="CS230"/>
+    <table-filter match-name="CS316"/>
+    <table-filter match-name="CT376"/>
+    <table-filter match-name="CT406"/>
+    <table-filter match-name="SE321"/>
+    <table-filter match-name="SE458"/>
 </hibernate-reverse-engineering>

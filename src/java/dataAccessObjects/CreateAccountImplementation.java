@@ -35,13 +35,6 @@ public class CreateAccountImplementation implements CreateAccountInterface
      * @param email Student's email address
      * @param username Username chosen by the student
      * @param password Password chosen by the student
-     * @param class1 Class the student might be taking
-     * @param class2 Class the student might be taking
-     * @param class3 Class the student might be taking
-     * @param class4 Class the student might be taking
-     * @param class5 Class the student might be taking
-     * @param class6 Class the student might be taking
-     * @param class7 Class the student might be taking
      */
     @Override
     public void createAccount(String studentID, String firstName, String lastName,

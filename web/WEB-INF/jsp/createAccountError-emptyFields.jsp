@@ -62,13 +62,13 @@
                         Class 1: 
                         <select id="classes1" name="class1">
                             <option selected value="null">None</option>
-                            <option value="cs225">CS 225</option>
-                            <option value="cs230">CS 230</option>
-                            <option value="cs316">CS 316</option>
-                            <option value="ct376">CT 376</option>
-                            <option value="ct406">CT 406</option>
-                            <option value="se321">SE 321</option>
-                            <option value="se458">SE 458</option>
+                            <option value="CS225">CS 225</option>
+                            <option value="CS230">CS 230</option>
+                            <option value="CS316">CS 316</option>
+                            <option value="CT376">CT 376</option>
+                            <option value="CT406">CT 406</option>
+                            <option value="SE321">SE 321</option>
+                            <option value="SE458">SE 458</option>
                         </select>
                     </label>
                     <br>
@@ -76,13 +76,13 @@
                         Class 2: 
                         <select id="classes2" name="class2">
                             <option selected value="null">None</option>
-                            <option value="cs225">CS 225</option>
-                            <option value="cs230">CS 230</option>
-                            <option value="cs316">CS 316</option>
-                            <option value="ct376">CT 376</option>
-                            <option value="ct406">CT 406</option>
-                            <option value="se321">SE 321</option>
-                            <option value="se458">SE 458</option>
+                            <option value="CS225">CS 225</option>
+                            <option value="CS230">CS 230</option>
+                            <option value="CS316">CS 316</option>
+                            <option value="CT376">CT 376</option>
+                            <option value="CT406">CT 406</option>
+                            <option value="SE321">SE 321</option>
+                            <option value="SE458">SE 458</option>
                         </select>
                     </label>
                     <br>
@@ -90,13 +90,13 @@
                         Class 3: 
                         <select id="classes3" name="class3">
                             <option selected value="null">None</option>
-                            <option value="cs225">CS 225</option>
-                            <option value="cs230">CS 230</option>
-                            <option value="cs316">CS 316</option>
-                            <option value="ct376">CT 376</option>
-                            <option value="ct406">CT 406</option>
-                            <option value="se321">SE 321</option>
-                            <option value="se458">SE 458</option>
+                            <option value="CS225">CS 225</option>
+                            <option value="CS230">CS 230</option>
+                            <option value="CS316">CS 316</option>
+                            <option value="CT376">CT 376</option>
+                            <option value="CT406">CT 406</option>
+                            <option value="SE321">SE 321</option>
+                            <option value="SE458">SE 458</option>
                         </select>
                     </label>
                     <br>
@@ -104,13 +104,13 @@
                         Class 4: 
                         <select id="classes4" name="class4">
                             <option selected value="null">None</option>
-                            <option value="cs225">CS 225</option>
-                            <option value="cs230">CS 230</option>
-                            <option value="cs316">CS 316</option>
-                            <option value="ct376">CT 376</option>
-                            <option value="ct406">CT 406</option>
-                            <option value="se321">SE 321</option>
-                            <option value="se458">SE 458</option>
+                            <option value="CS225">CS 225</option>
+                            <option value="CS230">CS 230</option>
+                            <option value="CS316">CS 316</option>
+                            <option value="CT376">CT 376</option>
+                            <option value="CT406">CT 406</option>
+                            <option value="SE321">SE 321</option>
+                            <option value="SE458">SE 458</option>
                         </select>
                     </label>
                     <br>
@@ -118,13 +118,13 @@
                         Class 5: 
                         <select id="classes5" name="class5">
                             <option selected value="null">None</option>
-                            <option value="cs225">CS 225</option>
-                            <option value="cs230">CS 230</option>
-                            <option value="cs316">CS 316</option>
-                            <option value="ct376">CT 376</option>
-                            <option value="ct406">CT 406</option>
-                            <option value="se321">SE 321</option>
-                            <option value="se458">SE 458</option>
+                            <option value="CS225">CS 225</option>
+                            <option value="CS230">CS 230</option>
+                            <option value="CS316">CS 316</option>
+                            <option value="CT376">CT 376</option>
+                            <option value="CT406">CT 406</option>
+                            <option value="SE321">SE 321</option>
+                            <option value="SE458">SE 458</option>
                         </select>
                     </label>
                     <br>
@@ -132,13 +132,13 @@
                         Class 6: 
                         <select id="classes6" name="class6">
                             <option selected value="null">None</option>
-                            <option value="cs225">CS 225</option>
-                            <option value="cs230">CS 230</option>
-                            <option value="cs316">CS 316</option>
-                            <option value="ct376">CT 376</option>
-                            <option value="ct406">CT 406</option>
-                            <option value="se321">SE 321</option>
-                            <option value="se458">SE 458</option>
+                            <option value="CS225">CS 225</option>
+                            <option value="CS230">CS 230</option>
+                            <option value="CS316">CS 316</option>
+                            <option value="CT376">CT 376</option>
+                            <option value="CT406">CT 406</option>
+                            <option value="SE321">SE 321</option>
+                            <option value="SE458">SE 458</option>
                         </select>
                     </label>
                     <br>
@@ -146,13 +146,13 @@
                         Class 7: 
                         <select id="classes7" name="class7">
                             <option selected value="null">None</option>
-                            <option value="cs225">CS 225</option>
-                            <option value="cs230">CS 230</option>
-                            <option value="cs316">CS 316</option>
-                            <option value="ct376">CT 376</option>
-                            <option value="ct406">CT 406</option>
-                            <option value="se321">SE 321</option>
-                            <option value="se458">SE 458</option>
+                            <option value="CS225">CS 225</option>
+                            <option value="CS230">CS 230</option>
+                            <option value="CS316">CS 316</option>
+                            <option value="CT376">CT 376</option>
+                            <option value="CT406">CT 406</option>
+                            <option value="SE321">SE 321</option>
+                            <option value="SE458">SE 458</option>
                         </select>
                     </label>
                     <br>

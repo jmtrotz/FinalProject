@@ -2,6 +2,7 @@ package dataAccessObjects;
 
 // Import packages
 import java.util.ArrayList;
+import java.util.HashMap;
 
 /**
  * Interface for getting information from the database for various JSP pages
@@ -17,7 +18,7 @@ public interface MenuItemsInterface
      * @param username Username entered into the login form
      * @return Returns an ArrayList containing the user's grades
      */
-    public ArrayList listGrades(String username);
+    public HashMap listGrades(String username);
     
     /**
      * Method to get the user's assignments from the database
@@ -30,5 +31,5 @@ public interface MenuItemsInterface
      * Method to get a list of the user's classmates from the database
      * @return Returns an ArrayList containing the user's classmates
      */
-    public ArrayList listPeople();
+    public HashMap listPeople();
 }

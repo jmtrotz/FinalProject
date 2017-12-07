@@ -3,6 +3,7 @@ package controllers;
 // Import packages
 import dataAccessObjects.MenuItemsInterface;
 import java.util.ArrayList;
+import java.util.HashMap;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -29,7 +30,8 @@ public class MenuItemsController implements Controller
         String selectedButton = request.getParameter("button");
         String redirectAddress = "";
         String modelName = "";
-        ArrayList<String> dataToReturn = new ArrayList<>();
+        ArrayList<String> listToReturn = new ArrayList<>();
+        HashMap<String, String> mapToReturn = new HashMap<>();
         
         HttpSession session = request.getSession();
         String username = session.getAttribute("username").toString();
@@ -38,14 +40,14 @@ public class MenuItemsController implements Controller
         {
             redirectAddress = "grades";
             modelName = "gradeList";
-            dataToReturn = menuItems.listGrades(username);
+            mapToReturn = menuItems.listGrades(username);
         }
         
         else if (selectedButton.equalsIgnoreCase("assignments"))
         {
             redirectAddress = "assignments";
             modelName = "assignmentList";
-            dataToReturn = menuItems.listAssignments(username);
+            listToReturn = menuItems.listAssignments(username);
         }
         
         else if (selectedButton.equalsIgnoreCase("files"))
@@ -57,10 +59,10 @@ public class MenuItemsController implements Controller
         {
             redirectAddress = "people";
             modelName = "peopleList";
-            dataToReturn = menuItems.listPeople();
+            mapToReturn = menuItems.listPeople();
         }
         
         // Return the new view and data
-        return new ModelAndView(redirectAddress, modelName, dataToReturn);
+        return new ModelAndView(redirectAddress, modelName, mapToReturn);
     }   
 }

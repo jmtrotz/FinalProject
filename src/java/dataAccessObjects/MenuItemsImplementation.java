@@ -1,10 +1,16 @@
 package dataAccessObjects;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Set;
+import objectMapping.CS225;
 import objectMapping.Student;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
 
 public class MenuItemsImplementation implements MenuItemsInterface
 {
@@ -20,33 +26,37 @@ public class MenuItemsImplementation implements MenuItemsInterface
     }
     
     @Override
-    public ArrayList listGrades(String username) 
+    public HashMap listGrades(String username) 
     {
         // Start a new session
         Session session = factory.openSession();
-        ArrayList<String> gradesList = new ArrayList<>();
+        Transaction transaction = null;
+        HashMap<String, String> gradeList = new HashMap<>();
         
         try 
         {
-            // Get the user's grades from the database
-            session.beginTransaction();
-            org.hibernate.Query query = session.createQuery("FROM Student "
-                    + "WHERE USERNAME = :username");
-            query.setParameter("username", username);
-            Student student = (Student) query.uniqueResult();
-            gradesList.add(student.getClass1());
-            gradesList.add(student.getClass2());
-            gradesList.add(student.getClass3());
-            gradesList.add(student.getClass4());
-            gradesList.add(student.getClass5());
-            gradesList.add(student.getClass6());
-            gradesList.add(student.getClass7());
+            transaction = session.beginTransaction();
+            List students = session.createQuery("FROM Student").list();
+            for (Iterator iterator1 = students.iterator(); iterator1.hasNext();) 
+            {
+                Student student = (Student) iterator1.next();
+                student.getUsername();
+                Set grades = customer.getCars();
+                
+                for (Iterator iterator2 = cars.iterator(); iterator2.hasNext();)
+                {
+                    Cars carName = (Cars) iterator2.next();
+                }
+            }
+            
+            transaction.commit();
         } 
         
         catch (HibernateException hibernateException) 
         {
             // Print a stack trace if there's an error
             hibernateException.printStackTrace();
+            transaction.rollback();
         } 
         
         finally 
@@ -56,7 +66,7 @@ public class MenuItemsImplementation implements MenuItemsInterface
         }
 
         // Return the results
-        return gradesList;
+        return gradeList;
     }
 
     @Override
@@ -64,7 +74,7 @@ public class MenuItemsImplementation implements MenuItemsInterface
     {
         // Start a new session
         Session session = factory.openSession();
-        ArrayList<String> assignmentsList = new ArrayList<>();
+        ArrayList<String> assignmentList = new ArrayList<>();
         
         try 
         {
@@ -73,13 +83,6 @@ public class MenuItemsImplementation implements MenuItemsInterface
                     + "WHERE USERNAME = :username");
             query.setParameter("username", username);
             Student student = (Student) query.uniqueResult();
-            assignmentsList.add(student.getClass1());
-            assignmentsList.add(student.getClass2());
-            assignmentsList.add(student.getClass3());
-            assignmentsList.add(student.getClass4());
-            assignmentsList.add(student.getClass5());
-            assignmentsList.add(student.getClass6());
-            assignmentsList.add(student.getClass7());
         } 
         
         catch (HibernateException hibernateException) 
@@ -95,20 +98,30 @@ public class MenuItemsImplementation implements MenuItemsInterface
         }
         
         // Return the results
-        return assignmentsList;
+        return assignmentList;
     }
 
     @Override
-    public ArrayList listPeople() 
+    public HashMap listPeople() 
     {
         // Start a new session
         Session session = factory.openSession();
-        ArrayList<String> peopleList = new ArrayList<>();
+        Transaction transaction = null;
+        HashMap<String, String> peopleList = new HashMap<>();
         
         try 
         {
             session.beginTransaction();
-            org.hibernate.Query query = session.createQuery("");
+            transaction = session.beginTransaction();
+            List students = session.createQuery("FROM CS225").list();
+            
+            for (Iterator iterator1 = students.iterator(); iterator1.hasNext();) 
+            {
+                CS225 cs225 = (CS225) iterator1.next();                
+                peopleList.put(cs225.getFirstName(), cs225.getEmail());
+            }
+            
+            transaction.commit();            
         } 
         
         catch (HibernateException hibernateException) 
