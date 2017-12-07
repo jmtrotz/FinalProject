@@ -39,10 +39,7 @@
     <bean id="login" class="dataAccessObjects.LoginImplementation">
         <property name="sessionFactory" ref="factory" />
     </bean>
-    <bean id="grades" class="dataAccessObjects.GradesImplementation">
-        <property name="sessionFactory" ref="factory" />
-    </bean>
-    <bean id="assignments" class="dataAccessObjects.AssignmentsImplementation">
+    <bean id="menuItems" class="dataAccessObjects.MenuItemsImplementation">
         <property name="sessionFactory" ref="factory" />
     </bean>
 </beans>

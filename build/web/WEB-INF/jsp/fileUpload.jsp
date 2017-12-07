@@ -12,10 +12,25 @@
     </head>
     <body>
         <div class="col-xs-2 bg-2">
-            <h3>Grades</h3>
-            <h3>Assignments</h3>
-            <h3>Documents</h3>
-            <h3>People</h3>
+            <fieldset>
+                <form action="menuItems.htm">
+                    <label>
+                        <input type="submit" name="button" value="Grades"/>
+                    </label>
+                    <br>
+                    <label>
+                        <input type="submit" name="button" value="Assignments"/>
+                    </label>
+                    <br>
+                    <label>
+                        <input type="submit" name="button" value="Files"/>
+                    </label>
+                    <br>
+                    <label>
+                        <input type="submit" name="button" value="People"/>
+                    </label>
+                </form> 
+            </fieldset>
         </div>
         <div class="col-xs-10 bg-1" align="center">
             <form id = "upload" method = "post" action = "#">

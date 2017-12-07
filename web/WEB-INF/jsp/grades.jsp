@@ -13,14 +13,29 @@
     </head>
     <body>
         <div class="col-xs-2 bg-2">
-            <a href="grades.jsp"><h3>Grades</h3></a>
-            <a href="assignments.jsp"><h3>Assignments</h3></a>
-            <a href=""><h3>Files</h3></a>
-            <a href="people.jsp"><h3>People</h3></a>
+            <fieldset>
+                <form action="menuItems.htm">
+                    <label>
+                        <input type="submit" name="button" value="Grades"/>
+                    </label>
+                    <br>
+                    <label>
+                        <input type="submit" name="button" value="Assignments"/>
+                    </label>
+                    <br>
+                    <label>
+                        <input type="submit" name="button" value="Files"/>
+                    </label>
+                    <br>
+                    <label>
+                        <input type="submit" name="button" value="People"/>
+                    </label>
+                </form> 
+            </fieldset>
         </div>
         <div class="col-xs-10 bg-1"> 
-            <c:forEach items="${assignments.listAssignments(request)}" var="assignment">
-                <c:forEach items="${grades.listGrades(request)}" var="grade">
+            <c:forEach items="${assignmentList}" var="assignment">
+                <c:forEach items="${gradeList}" var="grade">
                     <table>
                         <tr>
                             <td>

@@ -1,12 +1,12 @@
 package controllers;
 
 // Import packages
-import org.springframework.web.servlet.mvc.Controller;
-import org.springframework.web.servlet.ModelAndView;
+import dataAccessObjects.LoginInterface;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import dataAccessObjects.LoginInterface;
 import javax.servlet.http.HttpSession;
+import org.springframework.web.servlet.mvc.Controller;
+import org.springframework.web.servlet.ModelAndView;
 
 /**
  * Controller for the login page
