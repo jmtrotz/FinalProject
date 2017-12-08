@@ -30,51 +30,23 @@
         <property name="mappingResources">
             <list>
                 <value>objectMapping/Student.hbm.xml</value>
-            </list>
-        </property>
-        <property name="mappingResources">
-            <list>
                 <value>objectMapping/CS225.hbm.xml</value>
-            </list>
-        </property>
-        <property name="mappingResources">
-            <list>
                 <value>objectMapping/CS230.hbm.xml</value>
-            </list>
-        </property>
-        <property name="mappingResources">
-            <list>
                 <value>objectMapping/CS316.hbm.xml</value>
-            </list>
-        </property>
-        <property name="mappingResources">
-            <list>
                 <value>objectMapping/CT376.hbm.xml</value>
-            </list>
-        </property>
-        <property name="mappingResources">
-            <list>
                 <value>objectMapping/CT406.hbm.xml</value>
-            </list>
-        </property>
-        <property name="mappingResources">
-            <list>
                 <value>objectMapping/SE321.hbm.xml</value>
-            </list>
-        </property>
-        <property name="mappingResources">
-            <list>
                 <value>objectMapping/SE458.hbm.xml</value>
             </list>
         </property>
     </bean>
     <bean id="createAccount" class="dataAccessObjects.CreateAccountImplementation">
-        <property name="sessionFactory" ref="factory" />
+        <property name="sessionFactory" ref="factory"/>
     </bean> 
     <bean id="login" class="dataAccessObjects.LoginImplementation">
-        <property name="sessionFactory" ref="factory" />
+        <property name="sessionFactory" ref="factory"/>
     </bean>
     <bean id="menuItems" class="dataAccessObjects.MenuItemsImplementation">
-        <property name="sessionFactory" ref="factory" />
+        <property name="sessionFactory" ref="factory"/>
     </bean>
 </beans>

@@ -2,7 +2,6 @@ package controllers;
 
 // Import packages
 import dataAccessObjects.MenuItemsInterface;
-import java.util.ArrayList;
 import java.util.HashMap;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -30,7 +29,6 @@ public class MenuItemsController implements Controller
         String selectedButton = request.getParameter("button");
         String redirectAddress = "";
         String modelName = "";
-        ArrayList<String> listToReturn = new ArrayList<>();
         HashMap<String, String> mapToReturn = new HashMap<>();
         
         HttpSession session = request.getSession();
@@ -39,15 +37,8 @@ public class MenuItemsController implements Controller
         if (selectedButton.equalsIgnoreCase("grades")) 
         {
             redirectAddress = "grades";
-            modelName = "gradeList";
+            modelName = "gradeMap";
             mapToReturn = menuItems.listGrades(username);
-        }
-        
-        else if (selectedButton.equalsIgnoreCase("assignments"))
-        {
-            redirectAddress = "assignments";
-            modelName = "assignmentList";
-            listToReturn = menuItems.listAssignments(username);
         }
         
         else if (selectedButton.equalsIgnoreCase("files"))
@@ -58,7 +49,7 @@ public class MenuItemsController implements Controller
         else if (selectedButton.equalsIgnoreCase("people"))
         {
             redirectAddress = "people";
-            modelName = "peopleList";
+            modelName = "peopleMap";
             mapToReturn = menuItems.listPeople();
         }
         

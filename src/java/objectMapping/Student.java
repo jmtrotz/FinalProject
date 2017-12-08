@@ -1,7 +1,5 @@
 package objectMapping;
 
-import java.util.Set;
-
 /**
  * Class for creating a student POJO
  * @Class CT 406
@@ -42,6 +40,13 @@ public class Student implements java.io.Serializable
      * @param username Username chosen by the student
      * @param password Password chosen by the student
      * @param email Student's email address
+     * @param class1
+     * @param class2
+     * @param class3
+     * @param class4
+     * @param class5
+     * @param class6
+     * @param class7
      */
     public Student(String studentID, String firstName, String lastName,
             String email,  String username, String password, String class1,

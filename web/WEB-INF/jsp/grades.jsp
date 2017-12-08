@@ -34,19 +34,17 @@
             </fieldset>
         </div>
         <div class="col-xs-10 bg-1"> 
-            <c:forEach items="${assignmentList}" var="assignment">
-                <c:forEach items="${gradeList}" var="grade">
-                    <table>
-                        <tr>
-                            <td>
-                                <c:out value="${assignment}"/>
-                            </td>
-                            <td>
-                                <c:out value="${grade}"/>
-                            </td>
-                        </tr>
-                    </table>
-                </c:forEach>
+            <c:forEach items="${gradeMap}" var="grade">
+                <table>
+                    <tr>
+                        <td>
+                            <c:out value="${grade.key}"/>
+                        </td>
+                        <td>
+                            <c:out value="${grade.value}"/>
+                        </td>
+                    </tr>
+                </table>
             </c:forEach>
         </div>
     </body>

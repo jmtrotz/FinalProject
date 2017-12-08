@@ -34,19 +34,17 @@
             </fieldset>
         </div>
         <div class="col-xs-10 bg-1">
-            <c:forEach items="${peopletList}" var="people">
-                <c:forEach items="${emailList}" var="email">
+            <c:forEach items="${peopleMap}" var="people">
                     <table>
                         <tr>
                             <td>
-                                <c:out value="${people}"/>
+                                <c:out value="${people.key}"/>
                             </td>
                             <td>
-                                <c:out value="${email}"/>
+                                <c:out value="${people.value}"/>
                             </td>
                         </tr>
                     </table>
-                </c:forEach>
             </c:forEach>
         </div>
     </body>
