@@ -41,30 +41,30 @@ public class LoginController implements Controller
         // Get parameters from the webpage
         String username = request.getParameter("username");
         String password = request.getParameter("password");
-        String redirectAddress = "";
+        ModelAndView modelAndView = new ModelAndView();
 
         // Make sure the login form was completely filled out
         if (username.length() == 0 || password.length() == 0) 
         {
-            redirectAddress = "loginError-emptyFields";
+            modelAndView = new ModelAndView("loginError-emptyFields");
         }
         
         // Make sure the user actually exists in the database
         else if (login.userExistsInDB(username))
         {
-            redirectAddress = "loginError-username";
+            modelAndView = new ModelAndView("loginError-username");
         }
         
         // Make sure the password matches the username
         else if (!login.passwordMatchesUsername(username, password))
         {
-            redirectAddress = "loginError-password";
+            modelAndView = new ModelAndView("loginError-password");
         }
         
         // If everything checks out, log them in
         else
         {
-            redirectAddress = "viewClasses";
+            modelAndView = new ModelAndView("viewClasses", "classList", login.listClasses(username));
         }
         
         // Store the username for future use in the session
@@ -72,6 +72,6 @@ public class LoginController implements Controller
         session.setAttribute("username", username);
                 
         // Return the new view and a list of the user's classes
-        return new ModelAndView(redirectAddress, "classList", login.listClasses(username));
+        return modelAndView;
     }
 }
