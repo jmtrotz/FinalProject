@@ -1,5 +1,6 @@
 package dataAccessObjects;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
@@ -9,6 +10,7 @@ import objectMapping.CS316;
 import objectMapping.CT376;
 import objectMapping.CT406;
 import objectMapping.SE321;
+import objectMapping.Student;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -125,6 +127,52 @@ public class MenuItemsImplementation implements MenuItemsInterface
         // Return the results
         return peopleMap;
     }   
+    
+    /**
+     * Method to get a list of classes the student is enrolled in
+     * @param username Username entered into the login form
+     * @return Returns a list of classes the student is enrolled in
+     */
+    @Override
+    public ArrayList listClasses(String username) 
+    {
+        // Start a new session
+        Session session = factory.openSession();
+        ArrayList<String> classList = new ArrayList<>();
+        
+        try
+        {
+            // Check if the username exists in the database
+            session.beginTransaction();
+            org.hibernate.Query query  = session.createQuery("FROM Student "
+                    + "WHERE USERNAME = :username").setParameter("username", username);
+            
+            // If the username exists, all data is stored in a student object
+            Student student = (Student) query.uniqueResult();
+            
+            // Add the classes the student is in to the list
+            classList.add(student.getClass1());
+            classList.add(student.getClass2());
+            classList.add(student.getClass3());
+            classList.add(student.getClass4());
+            classList.add(student.getClass5());
+            classList.add(student.getClass6());
+        } 
+        
+        catch (HibernateException hibernateException) 
+        {
+            // Print a stack trace if there's an error
+            hibernateException.printStackTrace();
+        } 
+        
+        finally 
+        {
+            // Close the session to conserve resources
+            session.close();
+        }
+        
+        return classList;
+    }
     
     /**
      * Method to list a student's grades for CS225

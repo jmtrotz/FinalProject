@@ -15,6 +15,12 @@
             <fieldset>
                 <form action="menuItems.htm">
                     <label>
+                        <button type="submit" name="button" value="Home">
+                            <img src="images/home.jpg"/>
+                        </button>
+                    </label>
+                    <br>
+                    <label>
                         <button type="submit" name="button" value="Grades">
                             <img src="images/grades.png"/>
                         </button>

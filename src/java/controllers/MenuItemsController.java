@@ -2,7 +2,6 @@ package controllers;
 
 // Import packages
 import dataAccessObjects.MenuItemsInterface;
-import java.util.HashMap;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -36,31 +35,30 @@ public class MenuItemsController implements Controller
         String selectedButton = request.getParameter("button");  
         HttpSession session = request.getSession();
         String username = session.getAttribute("username").toString();
-        String classViewed = session.getAttribute("classViewed").toString();        
-        String redirectAddress = "";
-        String modelName = "";
-        HashMap<String, String> mapToReturn = new HashMap<>();      
+        String classViewed = session.getAttribute("classViewed").toString();
+        ModelAndView modelAndView = new ModelAndView();
         
-        if (selectedButton.equalsIgnoreCase("grades")) 
+        if (selectedButton.equalsIgnoreCase("home"))
         {
-            redirectAddress = "grades";
-            modelName = "gradeMap";
-            mapToReturn = menuItems.listGrades(username, classViewed);
+            modelAndView = new ModelAndView("viewClasses", "classList", menuItems.listClasses(username));
+        }
+        
+        else if (selectedButton.equalsIgnoreCase("grades")) 
+        {
+            modelAndView = new ModelAndView("grades", "gradeMap", menuItems.listGrades(username, classViewed));
         }
         
         else if (selectedButton.equalsIgnoreCase("files"))
         {
-            redirectAddress = "fileUpload";
+            modelAndView = new ModelAndView("fileUpload");
         }
         
         else if (selectedButton.equalsIgnoreCase("people"))
         {
-            redirectAddress = "people";
-            modelName = "peopleMap";
-            mapToReturn = menuItems.listPeople(classViewed);
+            modelAndView = new ModelAndView("people", "peopleMap", menuItems.listPeople(classViewed));
         }
         
         // Return the new view and data
-        return new ModelAndView(redirectAddress, modelName, mapToReturn);
+        return modelAndView;
     }   
 }

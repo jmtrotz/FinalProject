@@ -1,6 +1,7 @@
 package dataAccessObjects;
 
 // Import packages
+import java.util.ArrayList;
 import java.util.HashMap;
 
 /**
@@ -26,4 +27,11 @@ public interface MenuItemsInterface
      * @return Returns an ArrayList containing the user's classmates
      */
     public HashMap listPeople(String classViewed);
+    
+    /**
+     * Method to get a list of classes the student is enrolled in
+     * @param username Username entered into the login form
+     * @return Returns a list of classes the student is enrolled in
+     */
+    public ArrayList listClasses(String username);
 }
