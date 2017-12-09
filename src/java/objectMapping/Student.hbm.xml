@@ -48,8 +48,5 @@
         <property name="class6" type="string">
             <column name="CLASS6" length="20"/>
         </property>
-        <property name="class7" type="string">
-            <column name="CLASS7" length="20"/>
-        </property>
     </class>
 </hibernate-mapping>

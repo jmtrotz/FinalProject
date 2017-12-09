@@ -15,13 +15,15 @@ public interface MenuItemsInterface
     /**
      * Method to get the user's grades from the database
      * @param username Username entered into the login form
+     * @param classViewed Class the student wants their grades for
      * @return Returns an ArrayList containing the user's grades
      */
     public HashMap listGrades(String username, String classViewed);
     
     /**
      * Method to get a list of the user's classmates from the database
+     * @param classViewed Class the student wants a list of their classmates for
      * @return Returns an ArrayList containing the user's classmates
      */
-    public HashMap listPeople();
+    public HashMap listPeople(String classViewed);
 }

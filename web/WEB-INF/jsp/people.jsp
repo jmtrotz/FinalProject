@@ -16,18 +16,23 @@
             <fieldset>
                 <form action="menuItems.htm">
                     <label>
-                        <input type="submit" name="button" value="Grades"/>
-                    </label>
-                    <br>
-                    <br>
-                    <label>
-                        <input type="submit" name="button" value="Files"/>
+                        <button type="submit" name="button" value="Grades">
+                            <img src="images/grades.png"/>
+                        </button>
                     </label>
                     <br>
                     <label>
-                        <input type="submit" name="button" value="People"/>
+                        <button type="submit" name="button" value="Files">
+                            <img src="images/files.png"/>
+                        </button>
                     </label>
-                </form> 
+                    <br>
+                    <label>
+                        <button type="submit" name="button" value="People">
+                            <img src="images/people.png"/>
+                        </button>
+                    </label>
+                </form>
             </fieldset>
         </div>
         <div class="col-xs-10 bg-1">

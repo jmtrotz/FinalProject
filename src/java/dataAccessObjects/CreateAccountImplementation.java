@@ -1,6 +1,13 @@
 package dataAccessObjects;
 
 // Import packages
+import java.util.ArrayList;
+import objectMapping.CS225;
+import objectMapping.CS230;
+import objectMapping.CS316;
+import objectMapping.CT376;
+import objectMapping.CT406;
+import objectMapping.SE321;
 import objectMapping.Student;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
@@ -35,6 +42,12 @@ public class CreateAccountImplementation implements CreateAccountInterface
      * @param email Student's email address
      * @param username Username chosen by the student
      * @param password Password chosen by the student
+     * @param class1
+     * @param class2
+     * @param class3
+     * @param class4
+     * @param class5
+     * @param class6
      */
     @Override
     public void createAccount(String studentID, String firstName, String lastName,
@@ -45,7 +58,38 @@ public class CreateAccountImplementation implements CreateAccountInterface
         // Start a new session
         Session session = factory.openSession();
         Transaction transaction = null;
-
+        ArrayList<String> classList = new ArrayList();
+        
+        if (!(class1.equalsIgnoreCase("null")));
+        {
+            classList.add(class1);
+        }
+        
+        if (!(class2.equalsIgnoreCase("null")));
+        {
+            classList.add(class2);
+        }
+        
+        if (!(class3.equalsIgnoreCase("null")));
+        {
+            classList.add(class3);
+        }
+        
+        if (!(class4.equalsIgnoreCase("null")));
+        {
+            classList.add(class4);
+        }
+        
+        if (!(class5.equalsIgnoreCase("null")));
+        {
+            classList.add(class5);
+        }
+        
+        if (!(class6.equalsIgnoreCase("null")));
+        {
+            classList.add(class6);
+        }
+        
         try
         {
             // Add the student to the database
@@ -55,6 +99,40 @@ public class CreateAccountImplementation implements CreateAccountInterface
                     class6);
             session.save(student);
             transaction.commit();
+            
+            // Add the user to the classes they registered for
+            for(String registeredClass: classList)
+            {
+                if(registeredClass.equalsIgnoreCase("CS225"))
+                {
+                    this.insertIntoCS225(username, firstName, lastName, email);
+                }
+                
+                else if(registeredClass.equalsIgnoreCase("CS230"))
+                {
+                    this.insertIntoCS230(username, firstName, lastName, email);
+                }
+                
+                else if(registeredClass.equalsIgnoreCase("CS316"))
+                {
+                    this.insertIntoCS316(username, firstName, lastName, email);
+                }
+                
+                else if(registeredClass.equalsIgnoreCase("CT376"))
+                {
+                    this.insertIntoCT376(username, firstName, lastName, email);
+                }
+                
+                else if(registeredClass.equalsIgnoreCase("CT406"))
+                {
+                    this.insertIntoCT406(username, firstName, lastName, email);
+                }
+                
+                else if(registeredClass.equalsIgnoreCase("SE321"))
+                {
+                    this.insertIntoSE321(username, firstName, lastName, email);
+                }
+            }
         } 
         
         catch (HibernateException hibernateException) 
@@ -118,5 +196,245 @@ public class CreateAccountImplementation implements CreateAccountInterface
         
         // Return the results
         return usernameTaken;
+    }
+    
+    /**
+     * Method to add the user to the CS225 class (if they're registered for it) 
+     * @param username Username chosen by the student 
+     * @param firstName Student's first name
+     * @param lastName Student's last name
+     * @param email Student's email address
+     */
+    public void insertIntoCS225(String username, String firstName, String lastName, String email)
+    {
+        // Start a new session
+        Session session = factory.openSession();
+        Transaction transaction = null;
+        
+        try
+        {
+            // Add the student to the database
+            transaction = session.beginTransaction();
+            CS225 cs225 = new CS225(username, firstName, lastName, email);
+            session.save(cs225);
+            transaction.commit();
+        } 
+        
+        catch (HibernateException hibernateException) 
+        {
+            // Undo the changes if there's an error
+            if (transaction != null)
+            {
+                transaction.rollback();
+            }
+            
+            hibernateException.printStackTrace();
+        } 
+        
+        finally 
+        {
+            // Close the session to conserve resources
+            session.close();
+        }
+    }
+    
+    /**
+     * Method to add the user to the CS230 class (if they're registered for it) 
+     * @param username Username chosen by the student 
+     * @param firstName Student's first name
+     * @param lastName Student's last name
+     * @param email Student's email address
+     */
+    public void insertIntoCS230(String username, String firstName, String lastName, String email)
+    {
+        // Start a new session
+        Session session = factory.openSession();
+        Transaction transaction = null;
+        
+        try
+        {
+            // Add the student to the database
+            transaction = session.beginTransaction();
+            CS230 cs230 = new CS230(username, firstName, lastName, email);
+            session.save(cs230);
+            transaction.commit();
+        } 
+        
+        catch (HibernateException hibernateException) 
+        {
+            // Undo the changes if there's an error
+            if (transaction != null)
+            {
+                transaction.rollback();
+            }
+            
+            hibernateException.printStackTrace();
+        } 
+        
+        finally 
+        {
+            // Close the session to conserve resources
+            session.close();
+        }
+    }
+    
+    /**
+     * Method to add the user to the CS316 class (if they're registered for it) 
+     * @param username Username chosen by the student 
+     * @param firstName Student's first name
+     * @param lastName Student's last name
+     * @param email Student's email address
+     */
+    public void insertIntoCS316(String username, String firstName, String lastName, String email)
+    {
+        // Start a new session
+        Session session = factory.openSession();
+        Transaction transaction = null;
+        
+        try
+        {
+            // Add the student to the database
+            transaction = session.beginTransaction();
+            CS316 cs316 = new CS316(username, firstName, lastName, email);
+            session.save(cs316);
+            transaction.commit();
+        } 
+        
+        catch (HibernateException hibernateException) 
+        {
+            // Undo the changes if there's an error
+            if (transaction != null)
+            {
+                transaction.rollback();
+            }
+            
+            hibernateException.printStackTrace();
+        } 
+        
+        finally 
+        {
+            // Close the session to conserve resources
+            session.close();
+        }
+    }
+    
+    /**
+     * Method to add the user to the CT376 class (if they're registered for it) 
+     * @param username Username chosen by the student 
+     * @param firstName Student's first name
+     * @param lastName Student's last name
+     * @param email Student's email address
+     */
+    public void insertIntoCT376(String username, String firstName, String lastName, String email)
+    {
+        // Start a new session
+        Session session = factory.openSession();
+        Transaction transaction = null;
+        
+        try
+        {
+            // Add the student to the database
+            transaction = session.beginTransaction();
+            CT376 ct376 = new CT376(username, firstName, lastName, email);
+            session.save(ct376);
+            transaction.commit();
+        } 
+        
+        catch (HibernateException hibernateException) 
+        {
+            // Undo the changes if there's an error
+            if (transaction != null)
+            {
+                transaction.rollback();
+            }
+            
+            hibernateException.printStackTrace();
+        } 
+        
+        finally 
+        {
+            // Close the session to conserve resources
+            session.close();
+        }
+    }
+    
+    /**
+     * Method to add the user to the CT406 class (if they're registered for it) 
+     * @param username Username chosen by the student 
+     * @param firstName Student's first name
+     * @param lastName Student's last name
+     * @param email Student's email address
+     */
+    public void insertIntoCT406(String username, String firstName, String lastName, String email)
+    {
+        // Start a new session
+        Session session = factory.openSession();
+        Transaction transaction = null;
+        
+        try
+        {
+            // Add the student to the database
+            transaction = session.beginTransaction();
+            CT406 ct406 = new CT406(username, firstName, lastName, email);
+            session.save(ct406);
+            transaction.commit();
+        } 
+        
+        catch (HibernateException hibernateException) 
+        {
+            // Undo the changes if there's an error
+            if (transaction != null)
+            {
+                transaction.rollback();
+            }
+            
+            hibernateException.printStackTrace();
+        } 
+        
+        finally 
+        {
+            // Close the session to conserve resources
+            session.close();
+        }
+    }
+    
+    /**
+     * Method to add the user to the SE321 class (if they're registered for it) 
+     * @param username Username chosen by the student 
+     * @param firstName Student's first name
+     * @param lastName Student's last name
+     * @param email Student's email address
+     */
+    public void insertIntoSE321(String username, String firstName, String lastName, String email)
+    {
+        // Start a new session
+        Session session = factory.openSession();
+        Transaction transaction = null;
+        
+        try
+        {
+            // Add the student to the database
+            transaction = session.beginTransaction();
+            SE321 se321 = new SE321(username, firstName, lastName, email);
+            session.save(se321);
+            transaction.commit();
+        } 
+        
+        catch (HibernateException hibernateException) 
+        {
+            // Undo the changes if there's an error
+            if (transaction != null)
+            {
+                transaction.rollback();
+            }
+            
+            hibernateException.printStackTrace();
+        } 
+        
+        finally 
+        {
+            // Close the session to conserve resources
+            session.close();
+        }
     }
 }

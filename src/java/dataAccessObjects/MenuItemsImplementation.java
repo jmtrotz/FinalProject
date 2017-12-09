@@ -27,11 +27,22 @@ public class MenuItemsImplementation implements MenuItemsInterface
         MenuItemsImplementation.factory = factory;
     }
     
+    /**
+     * Method to get a list of a student's grades for their class
+     * @param username Student's username
+     * @param classViewed Class the student wants their grades for
+     * @return Returns a hash map containing assignments and their grade on it
+     */
     @Override
     public HashMap listGrades(String username, String classViewed)
     {
+        // Hashmap to return to the controller
         HashMap<String, String> gradeMap = new HashMap<>();
         
+        /* Call a listing method depending on which class the student viewed. 
+         * I REALLY didn't want to create a huge if statement and 6 list methods,
+         * but I couldn't figre out how to create one universal method...
+         */
         if (classViewed.equals("CS225"))
         {
             gradeMap = this.listGradesFromCS225(username);
@@ -65,45 +76,62 @@ public class MenuItemsImplementation implements MenuItemsInterface
         return gradeMap;
     }
     
+    /**
+     * Method to list all students in a class
+     * @param classViewed Class the student wants a list of classmates for
+     * @return Returns a hash map containing their classmate's first name and 
+     * their email address
+     */
     @Override
-    public HashMap listPeople() 
+    public HashMap listPeople(String classViewed) 
     {
-        // Start a new session
-        Session session = factory.openSession();
-        Transaction transaction = null;
+        // Hash map to store their classmate's name and email address
         HashMap<String, String> peopleMap = new HashMap<>();
         
-        try 
+        /* Call a listing method depending on which class the student viewed. 
+         * I REALLY didn't want to create a huge if statement and 6 list methods,
+         * but I couldn't figre out how to create one universal method...
+         */
+        if (classViewed.equals("CS225"))
         {
-            transaction = session.beginTransaction();
-            List students = session.createQuery("FROM CS225").list();
-            
-            for (Iterator iterator = students.iterator(); iterator.hasNext();) 
-            {
-                CS225 cs225 = (CS225) iterator.next();
-                peopleMap.put(cs225.getFirstName(), cs225.getEmail());
-            }
-            
-            transaction.commit();            
-        } 
+            peopleMap = this.listPeopleFromCS225();
+        }
         
-        catch (HibernateException hibernateException) 
+        else if (classViewed.equals("CS230"))
         {
-            // Print a stack trace if there's an error
-            hibernateException.printStackTrace();
-        } 
+            peopleMap = this.listPeopleFromCS230();
+        }
         
-        finally 
+        else if (classViewed.equals("CS316"))
         {
-            // Close the session to conserve resources
-            session.close();
+            peopleMap = this.listPeopleFromCS316();
+        }
+        
+        else if (classViewed.equals("CT376"))
+        {
+            peopleMap = this.listPeopleFromCT376();
+        }
+        
+        else if (classViewed.equals("CT406"))
+        {
+            peopleMap = this.listPeopleFromCT406();
+        }
+        
+        else if (classViewed.equals("SE321"))
+        {
+            peopleMap = this.listPeopleFromSE321();
         }
         
         // Return the results
         return peopleMap;
     }   
     
-    public HashMap listGradesFromCS225(String username)
+    /**
+     * Method to list a student's grades for CS225
+     * @param username Student's username
+     * @return Returns a hash map containing assignments and their grade on it
+     */
+    private HashMap listGradesFromCS225(String username)
     {
         // Start a new session
         Session session = factory.openSession();
@@ -143,7 +171,12 @@ public class MenuItemsImplementation implements MenuItemsInterface
         return cs225GradeMap;
     }
     
-    public HashMap listGradesFromCS230(String username)
+    /**
+     * Method to list a student's grades for CS230
+     * @param username Student's username
+     * @return Returns a hash map containing assignments and their grade on it
+     */
+    private HashMap listGradesFromCS230(String username)
     {
         // Start a new session
         Session session = factory.openSession();
@@ -183,7 +216,12 @@ public class MenuItemsImplementation implements MenuItemsInterface
         return cs230GradeMap;
     }
     
-    public HashMap listGradesFromCS316(String username)
+    /**
+     * Method to list a student's grades for CS316
+     * @param username Student's username
+     * @return Returns a hash map containing assignments and their grade on it
+     */
+    private HashMap listGradesFromCS316(String username)
     {
         // Start a new session
         Session session = factory.openSession();
@@ -223,7 +261,12 @@ public class MenuItemsImplementation implements MenuItemsInterface
         return cs316GradeMap;
     }
     
-    public HashMap listGradesFromCT376(String username)
+    /**
+     * Method to list a student's grades for CT376
+     * @param username Student's username
+     * @return Returns a hash map containing assignments and their grade on it
+     */
+    private HashMap listGradesFromCT376(String username)
     {
         // Start a new session
         Session session = factory.openSession();
@@ -263,7 +306,12 @@ public class MenuItemsImplementation implements MenuItemsInterface
         return ct376GradeMap;
     }
     
-    public HashMap listGradesFromCT406(String username)
+    /**
+     * Method to list a student's grades for CT406
+     * @param username Student's username
+     * @return Returns a hash map containing assignments and their grade on it
+     */
+    private HashMap listGradesFromCT406(String username)
     {
         // Start a new session
         Session session = factory.openSession();
@@ -303,7 +351,12 @@ public class MenuItemsImplementation implements MenuItemsInterface
         return ct406GradeMap;
     }
     
-    public HashMap listGradesFromSE321(String username)
+    /**
+     * Method to list a student's grades for SE321
+     * @param username Student's username
+     * @return Returns a hash map containing assignments and their grade on it
+     */
+    private HashMap listGradesFromSE321(String username)
     {
         // Start a new session
         Session session = factory.openSession();
@@ -341,5 +394,257 @@ public class MenuItemsImplementation implements MenuItemsInterface
 
         // Return the results
         return se321GradeMap;
+    }
+    
+    /**
+     * Method to list a student's classmates for CS225
+     * @return Returns a hash map containing their classmate's first name and
+     * email address
+     */
+    private HashMap listPeopleFromCS225()
+    {
+        // Start a new session
+        Session session = factory.openSession();
+        Transaction transaction = null;
+        HashMap<String, String> cs225PeopleMap = new HashMap<>();
+        
+        try 
+        {
+            transaction = session.beginTransaction();
+            List students = session.createQuery("FROM CS225").list();
+            
+            for (Iterator iterator = students.iterator(); iterator.hasNext();) 
+            {
+                CS225 cs225 = (CS225) iterator.next();
+                cs225PeopleMap.put(cs225.getFirstName(), cs225.getEmail());
+            }
+            
+            transaction.commit();            
+        } 
+        
+        catch (HibernateException hibernateException) 
+        {
+            // Print a stack trace if there's an error
+            hibernateException.printStackTrace();
+        } 
+        
+        finally 
+        {
+            // Close the session to conserve resources
+            session.close();
+        }
+        
+        // Return the results
+        return cs225PeopleMap;
+    }
+    
+    /**
+     * Method to list a student's classmates for CS230
+     * @return Returns a hash map containing their classmate's first name and
+     * email address
+     */
+    private HashMap listPeopleFromCS230()
+    {
+        // Start a new session
+        Session session = factory.openSession();
+        Transaction transaction = null;
+        HashMap<String, String> cs230PeopleMap = new HashMap<>();
+        
+        try 
+        {
+            transaction = session.beginTransaction();
+            List students = session.createQuery("FROM CS230").list();
+            
+            for (Iterator iterator = students.iterator(); iterator.hasNext();) 
+            {
+                CS230 cs230 = (CS230) iterator.next();
+                cs230PeopleMap.put(cs230.getFirstName(), cs230.getEmail());
+            }
+            
+            transaction.commit();            
+        } 
+        
+        catch (HibernateException hibernateException) 
+        {
+            // Print a stack trace if there's an error
+            hibernateException.printStackTrace();
+        } 
+        
+        finally 
+        {
+            // Close the session to conserve resources
+            session.close();
+        }
+        
+        // Return the results
+        return cs230PeopleMap;
+    }
+    
+    /**
+     * Method to list a student's classmates for CS316
+     * @return Returns a hash map containing their classmate's first name and
+     * email address
+     */
+    private HashMap listPeopleFromCS316()
+    {
+        // Start a new session
+        Session session = factory.openSession();
+        Transaction transaction = null;
+        HashMap<String, String> cs316PeopleMap = new HashMap<>();
+        
+        try 
+        {
+            transaction = session.beginTransaction();
+            List students = session.createQuery("FROM CS316").list();
+            
+            for (Iterator iterator = students.iterator(); iterator.hasNext();) 
+            {
+                CS316 cs316 = (CS316) iterator.next();
+                cs316PeopleMap.put(cs316.getFirstName(), cs316.getEmail());
+            }
+            
+            transaction.commit();            
+        } 
+        
+        catch (HibernateException hibernateException) 
+        {
+            // Print a stack trace if there's an error
+            hibernateException.printStackTrace();
+        } 
+        
+        finally 
+        {
+            // Close the session to conserve resources
+            session.close();
+        }
+        
+        // Return the results
+        return cs316PeopleMap;
+    }
+    
+    /**
+     * Method to list a student's classmates for CT376
+     * @return Returns a hash map containing their classmate's first name and
+     * email address
+     */
+    private HashMap listPeopleFromCT376()
+    {
+        // Start a new session
+        Session session = factory.openSession();
+        Transaction transaction = null;
+        HashMap<String, String> ct376PeopleMap = new HashMap<>();
+        
+        try 
+        {
+            transaction = session.beginTransaction();
+            List students = session.createQuery("FROM CT376").list();
+            
+            for (Iterator iterator = students.iterator(); iterator.hasNext();) 
+            {
+                CT376 ct376 = (CT376) iterator.next();
+                ct376PeopleMap.put(ct376.getFirstName(), ct376.getEmail());
+            }
+            
+            transaction.commit();            
+        } 
+        
+        catch (HibernateException hibernateException) 
+        {
+            // Print a stack trace if there's an error
+            hibernateException.printStackTrace();
+        } 
+        
+        finally 
+        {
+            // Close the session to conserve resources
+            session.close();
+        }
+        
+        // Return the results
+        return ct376PeopleMap;
+    }
+    
+    /**
+     * Method to list a student's classmates for CT406
+     * @return Returns a hash map containing their classmate's first name and
+     * email address
+     */
+    private HashMap listPeopleFromCT406()
+    {
+        // Start a new session
+        Session session = factory.openSession();
+        Transaction transaction = null;
+        HashMap<String, String> ct406PeopleMap = new HashMap<>();
+        
+        try 
+        {
+            transaction = session.beginTransaction();
+            List students = session.createQuery("FROM CT406").list();
+            
+            for (Iterator iterator = students.iterator(); iterator.hasNext();) 
+            {
+                CT406 ct406 = (CT406) iterator.next();
+                ct406PeopleMap.put(ct406.getFirstName(), ct406.getEmail());
+            }
+            
+            transaction.commit();            
+        } 
+        
+        catch (HibernateException hibernateException) 
+        {
+            // Print a stack trace if there's an error
+            hibernateException.printStackTrace();
+        } 
+        
+        finally 
+        {
+            // Close the session to conserve resources
+            session.close();
+        }
+        
+        // Return the results
+        return ct406PeopleMap;
+    }
+    
+    /**
+     * Method to list a student's classmates for SE321
+     * @return Returns a hash map containing their classmate's first name and
+     * email address
+     */
+    private HashMap listPeopleFromSE321()
+    {
+        // Start a new session
+        Session session = factory.openSession();
+        Transaction transaction = null;
+        HashMap<String, String> se321PeopleMap = new HashMap<>();
+        
+        try 
+        {
+            transaction = session.beginTransaction();
+            List students = session.createQuery("FROM SE321").list();
+            
+            for (Iterator iterator = students.iterator(); iterator.hasNext();) 
+            {
+                SE321 se321 = (SE321) iterator.next();
+                se321PeopleMap.put(se321.getFirstName(), se321.getEmail());
+            }
+            
+            transaction.commit();            
+        } 
+        
+        catch (HibernateException hibernateException) 
+        {
+            // Print a stack trace if there's an error
+            hibernateException.printStackTrace();
+        } 
+        
+        finally 
+        {
+            // Close the session to conserve resources
+            session.close();
+        }
+        
+        // Return the results
+        return se321PeopleMap;
     }
 }

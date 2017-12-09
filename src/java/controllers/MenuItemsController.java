@@ -22,18 +22,24 @@ public class MenuItemsController implements Controller
         this.menuItems = menuItems;
     }
     
+    /**
+     * Handles HTTP requests from clients
+     * @param request HTTP request from the client
+     * @param response HTTP response sent to the client
+     * @return Returns a new view for the client
+     * @throws Exception Throws an exception if there's an error
+     */
     @Override
     public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) throws Exception 
     {
         // Get parameters from the webpage
-        String selectedButton = request.getParameter("button");
-        String redirectAddress = "";
-        String modelName = "";
-        HashMap<String, String> mapToReturn = new HashMap<>();
-        
+        String selectedButton = request.getParameter("button");  
         HttpSession session = request.getSession();
         String username = session.getAttribute("username").toString();
-        String classViewed = session.getAttribute("classViewed").toString();
+        String classViewed = session.getAttribute("classViewed").toString();        
+        String redirectAddress = "";
+        String modelName = "";
+        HashMap<String, String> mapToReturn = new HashMap<>();      
         
         if (selectedButton.equalsIgnoreCase("grades")) 
         {
@@ -51,7 +57,7 @@ public class MenuItemsController implements Controller
         {
             redirectAddress = "people";
             modelName = "peopleMap";
-            mapToReturn = menuItems.listPeople();
+            mapToReturn = menuItems.listPeople(classViewed);
         }
         
         // Return the new view and data

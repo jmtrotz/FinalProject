@@ -33,7 +33,22 @@ public class CS225 implements java.io.Serializable
     }
     
     /**
-     * Overloaded constructor
+     * Overloaded constructor 1
+     * @param username The student's username
+     * @param firstName The student's first name
+     * @param lastName The student's last name
+     * @param email The student's email address
+     */
+    public CS225(String username, String firstName, String lastName, String email)
+    {
+        this.username = username;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+    }
+    
+    /**
+     * Overloaded constructor 2
      * @param username The student's username
      * @param firstName The student's first name
      * @param lastName The student's last name
