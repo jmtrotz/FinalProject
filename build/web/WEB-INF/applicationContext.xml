@@ -36,7 +36,6 @@
                 <value>objectMapping/CT376.hbm.xml</value>
                 <value>objectMapping/CT406.hbm.xml</value>
                 <value>objectMapping/SE321.hbm.xml</value>
-                <value>objectMapping/SE458.hbm.xml</value>
             </list>
         </property>
     </bean>

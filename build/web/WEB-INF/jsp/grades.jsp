@@ -20,10 +20,6 @@
                     </label>
                     <br>
                     <label>
-                        <input type="submit" name="button" value="Assignments"/>
-                    </label>
-                    <br>
-                    <label>
                         <input type="submit" name="button" value="Files"/>
                     </label>
                     <br>
@@ -34,8 +30,8 @@
             </fieldset>
         </div>
         <div class="col-xs-10 bg-1"> 
-            <c:forEach items="${gradeMap}" var="grade">
-                <table>
+            <table>
+                <c:forEach items="${gradeMap}" var="grade">
                     <tr>
                         <td>
                             <c:out value="${grade.key}"/>
@@ -44,8 +40,8 @@
                             <c:out value="${grade.value}"/>
                         </td>
                     </tr>
-                </table>
-            </c:forEach>
+                </c:forEach>
+            </table>
         </div>
     </body>
 </html>

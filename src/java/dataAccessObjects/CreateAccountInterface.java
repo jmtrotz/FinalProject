@@ -17,11 +17,17 @@ public interface CreateAccountInterface
      * @param username Username chosen by the student
      * @param password Password chosen by the student
      * @param email Student's email address
+     * @param class1
+     * @param class2
+     * @param class3
+     * @param class4
+     * @param class5
+     * @param class6
      */
     public void createAccount(String studentID, String firstName, String lastName,
             String username, String password, String email, String class1,
             String class2, String class3, String class4, String class5,
-            String class6, String class7);
+            String class6);
 
     /**
      * Method to verify that a username isn't already in use

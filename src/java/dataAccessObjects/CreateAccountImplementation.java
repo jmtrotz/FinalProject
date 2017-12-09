@@ -40,7 +40,7 @@ public class CreateAccountImplementation implements CreateAccountInterface
     public void createAccount(String studentID, String firstName, String lastName,
             String email, String username, String password, String class1,
             String class2, String class3, String class4, String class5,
-            String class6, String class7)
+            String class6)
     {
         // Start a new session
         Session session = factory.openSession();
@@ -50,9 +50,9 @@ public class CreateAccountImplementation implements CreateAccountInterface
         {
             // Add the student to the database
             transaction = session.beginTransaction();
-            Student student = new Student(studentID, firstName, lastName,
-                    email, username, password, class1, class2, class3, class4,
-                    class5, class6, class7);
+            Student student = new Student(studentID, firstName, lastName, email, 
+                    username, password, class1, class2, class3, class4, class5, 
+                    class6);
             session.save(student);
             transaction.commit();
         } 
@@ -91,7 +91,8 @@ public class CreateAccountImplementation implements CreateAccountInterface
         {
             // Check if the username exists in the database
             session.beginTransaction();
-            org.hibernate.Query query  = session.createQuery("FROM Student WHERE USERNAME = :username");
+            org.hibernate.Query query  = session.createQuery("FROM Student WHERE"
+                    + " USERNAME = :username");
             query.setParameter("username", username);
         
             // If the username exists, set usernameExists to true

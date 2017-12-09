@@ -17,7 +17,7 @@ public interface MenuItemsInterface
      * @param username Username entered into the login form
      * @return Returns an ArrayList containing the user's grades
      */
-    public HashMap listGrades(String username);
+    public HashMap listGrades(String username, String classViewed);
     
     /**
      * Method to get a list of the user's classmates from the database

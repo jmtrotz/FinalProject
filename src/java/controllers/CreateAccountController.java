@@ -51,7 +51,6 @@ public class CreateAccountController implements Controller
         String class4 = request.getParameter("class4");
         String class5 = request.getParameter("class5");
         String class6 = request.getParameter("class6");
-        String class7 = request.getParameter("class7");
         String redirectAddress = "";
 
         // Make sure the form was completely filled out
@@ -80,7 +79,7 @@ public class CreateAccountController implements Controller
             
             createAccount.createAccount(studentID, firstName, lastName, email,
                     username, password, class1, class2, class3, class4, class5,
-                    class6, class7);
+                    class6);
             redirectAddress = "accountCreated";
         }
 

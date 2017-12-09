@@ -18,9 +18,6 @@
                         <input type="submit" name="button" value="Grades"/>
                     </label>
                     <br>
-                    <label>
-                        <input type="submit" name="button" value="Assignments"/>
-                    </label>
                     <br>
                     <label>
                         <input type="submit" name="button" value="Files"/>

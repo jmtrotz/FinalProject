@@ -33,12 +33,13 @@ public class MenuItemsController implements Controller
         
         HttpSession session = request.getSession();
         String username = session.getAttribute("username").toString();
+        String classViewed = session.getAttribute("classViewed").toString();
         
         if (selectedButton.equalsIgnoreCase("grades")) 
         {
             redirectAddress = "grades";
             modelName = "gradeMap";
-            mapToReturn = menuItems.listGrades(username);
+            mapToReturn = menuItems.listGrades(username, classViewed);
         }
         
         else if (selectedButton.equalsIgnoreCase("files"))

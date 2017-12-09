@@ -43,9 +43,8 @@ public class LoginImplementation implements LoginInterface
         {
             // Check if the username exists in the database
             session.beginTransaction();
-            org.hibernate.Query query  = session.createQuery("FROM Student "
-                    + "WHERE USERNAME = :username");
-            query.setParameter("username", username);
+            org.hibernate.Query query  = session.createQuery("FROM Student WHERE "
+                    + "USERNAME = :username").setParameter("username", username);
         
             // If the username exists, set usernameExists to true
             if (query.uniqueResult() == null)
@@ -88,8 +87,7 @@ public class LoginImplementation implements LoginInterface
             // Check if the username exists in the database
             session.beginTransaction();
             org.hibernate.Query query  = session.createQuery("FROM Student "
-                    + "WHERE USERNAME = :username");
-            query.setParameter("username", username);
+                    + "WHERE USERNAME = :username").setParameter("username", username);
             
             // If the username exists, all data is stored in a student object
             Student student = (Student) query.uniqueResult();
@@ -134,8 +132,7 @@ public class LoginImplementation implements LoginInterface
             // Check if the username exists in the database
             session.beginTransaction();
             org.hibernate.Query query  = session.createQuery("FROM Student "
-                    + "WHERE USERNAME = :username");
-            query.setParameter("username", username);
+                    + "WHERE USERNAME = :username").setParameter("username", username);
             
             // If the username exists, all data is stored in a student object
             Student student = (Student) query.uniqueResult();
@@ -147,7 +144,6 @@ public class LoginImplementation implements LoginInterface
             classList.add(student.getClass4());
             classList.add(student.getClass5());
             classList.add(student.getClass6());
-            classList.add(student.getClass7());
         } 
         
         catch (HibernateException hibernateException) 

@@ -68,7 +68,6 @@
                             <option value="CT376">CT 376</option>
                             <option value="CT406">CT 406</option>
                             <option value="SE321">SE 321</option>
-                            <option value="SE458">SE 458</option>
                         </select>
                     </label>
                     <br>
@@ -82,7 +81,6 @@
                             <option value="CT376">CT 376</option>
                             <option value="CT406">CT 406</option>
                             <option value="SE321">SE 321</option>
-                            <option value="SE458">SE 458</option>
                         </select>
                     </label>
                     <br>
@@ -96,7 +94,6 @@
                             <option value="CT376">CT 376</option>
                             <option value="CT406">CT 406</option>
                             <option value="SE321">SE 321</option>
-                            <option value="SE458">SE 458</option>
                         </select>
                     </label>
                     <br>
@@ -110,7 +107,6 @@
                             <option value="CT376">CT 376</option>
                             <option value="CT406">CT 406</option>
                             <option value="SE321">SE 321</option>
-                            <option value="SE458">SE 458</option>
                         </select>
                     </label>
                     <br>
@@ -124,7 +120,6 @@
                             <option value="CT376">CT 376</option>
                             <option value="CT406">CT 406</option>
                             <option value="SE321">SE 321</option>
-                            <option value="SE458">SE 458</option>
                         </select>
                     </label>
                     <br>
@@ -138,21 +133,6 @@
                             <option value="CT376">CT 376</option>
                             <option value="CT406">CT 406</option>
                             <option value="SE321">SE 321</option>
-                            <option value="SE458">SE 458</option>
-                        </select>
-                    </label>
-                    <br>
-                    <label>
-                        Class 7: 
-                        <select id="classes7" name="class7">
-                            <option selected value="null">None</option>
-                            <option value="CS225">CS 225</option>
-                            <option value="CS230">CS 230</option>
-                            <option value="CS316">CS 316</option>
-                            <option value="CT376">CT 376</option>
-                            <option value="CT406">CT 406</option>
-                            <option value="SE321">SE 321</option>
-                            <option value="SE458">SE 458</option>
                         </select>
                     </label>
                     <br>

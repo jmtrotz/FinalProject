@@ -22,7 +22,6 @@ public class Student implements java.io.Serializable
     private String class4;
     private String class5;
     private String class6;
-    private String class7;
 
     /**
      * Default constructor
@@ -51,7 +50,7 @@ public class Student implements java.io.Serializable
     public Student(String studentID, String firstName, String lastName,
             String email,  String username, String password, String class1,
             String class2, String class3, String class4, String class5,
-            String class6, String class7) 
+            String class6) 
     {
         this.studentID = studentID;
         this.firstName = firstName;
@@ -65,7 +64,6 @@ public class Student implements java.io.Serializable
         this.class4 = class4;
         this.class5 = class5;
         this.class6 = class6;
-        this.class7 = class7;
         
     }
 
@@ -223,13 +221,5 @@ public class Student implements java.io.Serializable
 
     public void setClass6(String class6) {
         this.class6 = class6;
-    }
-
-    public String getClass7() {
-        return class7;
-    }
-
-    public void setClass7(String class7) {
-        this.class7 = class7;
     }
 }
