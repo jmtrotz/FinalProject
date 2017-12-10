@@ -21,7 +21,6 @@
         <div class="container-fluid" align="center">
             <fieldset>
                 <form action="createAccount.htm">
-                    <img src="images/formLogo.png" width="190" height="56">
                     <label>
                         <font color="red">*</font>Student ID: 
                         <input type="text" name="studentID"/>
