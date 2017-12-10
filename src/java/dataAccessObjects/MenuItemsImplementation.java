@@ -464,7 +464,7 @@ public class MenuItemsImplementation implements MenuItemsInterface
             for (Iterator iterator = students.iterator(); iterator.hasNext();) 
             {
                 CS225 cs225 = (CS225) iterator.next();
-                cs225PeopleMap.put(cs225.getFirstName(), cs225.getEmail());
+                cs225PeopleMap.put(cs225.getFirstName() + " " + cs225.getLastName(), cs225.getEmail());
             }
             
             transaction.commit();            
@@ -506,7 +506,7 @@ public class MenuItemsImplementation implements MenuItemsInterface
             for (Iterator iterator = students.iterator(); iterator.hasNext();) 
             {
                 CS230 cs230 = (CS230) iterator.next();
-                cs230PeopleMap.put(cs230.getFirstName(), cs230.getEmail());
+                cs230PeopleMap.put(cs230.getFirstName() + " " + cs230.getLastName(), cs230.getEmail());
             }
             
             transaction.commit();            
@@ -548,7 +548,7 @@ public class MenuItemsImplementation implements MenuItemsInterface
             for (Iterator iterator = students.iterator(); iterator.hasNext();) 
             {
                 CS316 cs316 = (CS316) iterator.next();
-                cs316PeopleMap.put(cs316.getFirstName(), cs316.getEmail());
+                cs316PeopleMap.put(cs316.getFirstName() + " " + cs316.getLastName(), cs316.getEmail());
             }
             
             transaction.commit();            
@@ -590,7 +590,7 @@ public class MenuItemsImplementation implements MenuItemsInterface
             for (Iterator iterator = students.iterator(); iterator.hasNext();) 
             {
                 CT376 ct376 = (CT376) iterator.next();
-                ct376PeopleMap.put(ct376.getFirstName(), ct376.getEmail());
+                ct376PeopleMap.put(ct376.getFirstName() + " " + ct376.getLastName(), ct376.getEmail());
             }
             
             transaction.commit();            
@@ -632,7 +632,7 @@ public class MenuItemsImplementation implements MenuItemsInterface
             for (Iterator iterator = students.iterator(); iterator.hasNext();) 
             {
                 CT406 ct406 = (CT406) iterator.next();
-                ct406PeopleMap.put(ct406.getFirstName(), ct406.getEmail());
+                ct406PeopleMap.put(ct406.getFirstName() + " " + ct406.getLastName(), ct406.getEmail());
             }
             
             transaction.commit();            
@@ -674,7 +674,7 @@ public class MenuItemsImplementation implements MenuItemsInterface
             for (Iterator iterator = students.iterator(); iterator.hasNext();) 
             {
                 SE321 se321 = (SE321) iterator.next();
-                se321PeopleMap.put(se321.getFirstName(), se321.getEmail());
+                se321PeopleMap.put(se321.getFirstName() + " " + se321.getLastName(), se321.getEmail());
             }
             
             transaction.commit();            

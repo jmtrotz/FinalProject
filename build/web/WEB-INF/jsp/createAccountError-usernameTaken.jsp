@@ -23,6 +23,7 @@
                 <img src="images/error.png">
                 <h1>Error creating account: Username is already in use</h1>
                 <form action="createAccount.htm">
+                    <img src="images/formLogo.png" width="190" height="56">
                     <label>
                         <font color="red">*</font>Student ID: 
                         <input type="text" name="studentID"/>

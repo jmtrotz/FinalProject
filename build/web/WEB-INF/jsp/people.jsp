@@ -1,3 +1,10 @@
+<!--
+    Page to login to view a list of classmates
+    Class: CT406
+    Date: 12/7/17
+    Authors: Jeffrey Trotz & William Varner
+    Version: 1.0
+-->
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
@@ -42,18 +49,28 @@
             </fieldset>
         </div>
         <div class="col-xs-10 bg-1">
-            <c:forEach items="${peopleMap}" var="people">
-                    <table>
+            <center>
+                <table class="table">
+                    <tr>
+                        <th scope="col">
+                            <h1>Name</h1>
+                        </th>
+                        <th scope="col">
+                            <h1>Email</h1>
+                        </th>
+                    </tr>
+                    <c:forEach items="${peopleMap}" var="people">
                         <tr>
-                            <td>
-                                <c:out value="${people.key}"/>
+                            <td scope="row">
+                                <h1><c:out value="${people.key}"/></h1>
                             </td>
-                            <td>
-                                <c:out value="${people.value}"/>
+                            <td scope="row">
+                                <h1><c:out value="${people.value}"/></h1>
                             </td>
                         </tr>
-                    </table>
-            </c:forEach>
+                    </c:forEach>
+                </table>
+            </center>
         </div>
     </body>
 </html>

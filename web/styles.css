@@ -6,6 +6,28 @@ body {
     text-align: center;
 }
 
+/*
+ * Styling for tables
+ */
+table, th, td {
+    border: 3px solid #000000;
+    border-radius: 25px;
+    border-color: #ffffff;
+}
+
+/* 
+ * Styling for forms
+ */
+form {
+    border: 3px solid #000000;
+    border-radius: 25px;
+    border-color: #ffffff;
+    margin: 12px;
+    padding: .3em 1em;
+    width: 225px;
+    text-align: center;
+}
+
 /* 
  * Another background color
  */
@@ -28,17 +50,4 @@ body {
 .bg-3 { 
     background-color: #ffffff;
     color: #555555;
-}
-
-/* 
- * Stying for the login and account creation forms
- */
-form {
-    border: 3px solid #000000;
-    border-radius: 25px;
-    border-color: #ffffff;
-    margin: 12px;
-    padding: .3em 1em;
-    width: 250px;
-    text-align: center;
 }

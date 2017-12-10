@@ -23,7 +23,7 @@
                 <img src="images/error.png">
                 <h1>Login error: Please fill out all required fields</h1>
                 <form action="login.htm">
-                    <img src="images/formLogo.png" width="215" height="63">
+                    <img src="images/formLogo.png" width="190" height="56">
                     <label>
                         <font color="red">*</font>Username: 
                         <input type="text" name="username"/>

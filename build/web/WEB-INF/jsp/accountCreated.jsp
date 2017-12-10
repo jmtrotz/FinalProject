@@ -21,7 +21,7 @@
             <fieldset>
                 <h1>Your account has been created! Please try logging in</h1>
                 <form action="login.htm">
-                    <img src="images/formLogo.png" width="215" height="63">
+                    <img src="images/formLogo.png" width="190" height="56">
                     <label>
                         <font color="red">*</font>Username: 
                         <input type="text" name="username"/>
