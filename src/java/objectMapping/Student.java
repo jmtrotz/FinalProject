@@ -39,13 +39,12 @@ public class Student implements java.io.Serializable
      * @param username Username chosen by the student
      * @param password Password chosen by the student
      * @param email Student's email address
-     * @param class1
-     * @param class2
-     * @param class3
-     * @param class4
-     * @param class5
-     * @param class6
-     * @param class7
+     * @param class1 Class the student may be taking
+     * @param class2 Class the student may be taking
+     * @param class3 Class the student may be taking
+     * @param class4 Class the student may be taking
+     * @param class5 Class the student may be taking
+     * @param class6 Class the student may be taking
      */
     public Student(String studentID, String firstName, String lastName,
             String email,  String username, String password, String class1,
@@ -175,51 +174,111 @@ public class Student implements java.io.Serializable
         this.password = password;
     }
     
-    public String getClass1() {
+    /**
+     * Getter for class1
+     * @return Returns the class name as a String
+     */
+    public String getClass1() 
+    {
         return class1;
     }
 
-    public void setClass1(String class1) {
+    /**
+     * Setter for class6
+     * @param class1 Class the student may be taking
+     */
+    public void setClass1(String class1) 
+    {
         this.class1 = class1;
     }
 
-    public String getClass2() {
+    /**
+     * Getter for class2
+     * @return Returns the class name as a String
+     */
+    public String getClass2() 
+    {
         return class2;
     }
 
-    public void setClass2(String class2) {
+    /**
+     * Setter for class6
+     * @param class2 Class the student may be taking
+     */
+    public void setClass2(String class2) 
+    {
         this.class2 = class2;
     }
 
-    public String getClass3() {
+    /**
+     * Getter for class3
+     * @return Returns the class name as a String
+     */
+    public String getClass3() 
+    {
         return class3;
     }
 
-    public void setClass3(String class3) {
+    /**
+     * Setter for class6
+     * @param class3 Class the student may be taking
+     */
+    public void setClass3(String class3) 
+    {
         this.class3 = class3;
     }
 
-    public String getClass4() {
+    /**
+     * Getter for class4
+     * @return Returns the class name as a String
+     */
+    public String getClass4() 
+    {
         return class4;
     }
 
-    public void setClass4(String class4) {
+    /**
+     * Setter for class6
+     * @param class4 Class the student may be taking
+     */
+    public void setClass4(String class4) 
+    {
         this.class4 = class4;
     }
 
-    public String getClass5() {
+    /**
+     * Getter for class5
+     * @return Returns the class name as a String
+     */
+    public String getClass5()
+    {
         return class5;
     }
 
-    public void setClass5(String class5) {
+    /**
+     * Setter for class6
+     * @param class5 Class the student may be taking
+     */
+    public void setClass5(String class5) 
+    {
         this.class5 = class5;
     }
 
-    public String getClass6() {
+    /**
+     * Getter for class6
+     * @return Returns the class name as a String
+     */
+    public String getClass6()
+    {
         return class6;
     }
 
-    public void setClass6(String class6) {
+    /**
+     * Setter for class6
+     * @param class6 Class the student may be taking
+     */
+    public void setClass6(String class6) 
+    {
         this.class6 = class6;
     }
 }

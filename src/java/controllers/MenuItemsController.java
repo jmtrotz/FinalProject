@@ -8,6 +8,13 @@ import javax.servlet.http.HttpSession;
 import org.springframework.web.servlet.mvc.Controller;
 import org.springframework.web.servlet.ModelAndView;
 
+/**
+ * Controller for the menu items
+ * @Class CT 406
+ * @Date 12/7/17
+ * @authors Jeffrey Trotz & William Varner
+ * @version 1.0
+ */
 public class MenuItemsController implements Controller
 {
     private MenuItemsInterface menuItems;
